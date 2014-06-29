@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TodayViewController : UIViewController
+#import "TodayLineTableViewCell.h"
+
+@interface TodayViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    IBOutlet TodayLineTableViewCell *todayLineTableViewCell;
+}
+
+@property (nonatomic, retain) IBOutlet UITableView *todayLineTableView;
 
 @end

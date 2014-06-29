@@ -6,32 +6,60 @@
 //  Copyright (c) 2014 Code Canopy. All rights reserved.
 //
 
-#import "TodayViewController.h"
 #import <NotificationCenter/NotificationCenter.h>
+
+#import "TodayViewController.h"
+#import "DataModel.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 
 @end
 
-@implementation TodayViewController
-
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+@implementation TodayViewController {
+    NSMutableArray *cachedData;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        
+    }
+    
+    return self;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    DataModel *dataModel = [[DataModel alloc] init];
+    
+    cachedData = [dataModel getRefreshedData];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [cachedData count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return todayLineTableViewCell.frame.size.height;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *cellIdentifier = @"TodayLineTableViewCell";
+    
+    TodayLineTableViewCell *cell = (TodayLineTableViewCell *)[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
+    if (cell == nil) {
+        [[NSBundle mainBundle] loadNibNamed:@"TodayLineTableViewCell" owner:self options:nil];
+        
+        cell = todayLineTableViewCell;
+    }
+    
+    return cell;
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    // Perform any setup necessary in order to update the view.
-    
-    // If an error is encoutered, use NCUpdateResultFailed
-    // If there's no update required, use NCUpdateResultNoData
-    // If there's an update, use NCUpdateResultNewData
-
     completionHandler(NCUpdateResultNewData);
 }
 

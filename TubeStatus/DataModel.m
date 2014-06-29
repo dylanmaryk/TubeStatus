@@ -10,6 +10,8 @@
 #import "XMLParserDelegate.h"
 
 @implementation DataModel {
+    XMLParserDelegate *xmlParserDelegate;
+    
     NSXMLParser *xmlParser;
 }
 
@@ -17,16 +19,16 @@
     self = [super init];
     
     if (self) {
-        XMLParserDelegate *xmlParserDelegate = [[XMLParserDelegate alloc] init];
-        
-        xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://cloud.tfl.gov.uk/TrackerNet/LineStatus"]];
-        [xmlParser setDelegate:xmlParserDelegate];
+        xmlParserDelegate = [[XMLParserDelegate alloc] init];
     }
     
     return self;
 }
 
 - (NSMutableArray *)getRefreshedData {
+    xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://cloud.tfl.gov.uk/TrackerNet/LineStatus"]];
+    [xmlParser setDelegate:xmlParserDelegate];
+    
     if ([xmlParser parse] || [[NSUserDefaults standardUserDefaults] objectForKey:@"cachedData"]) {
         NSMutableArray *cachedData = [[[NSUserDefaults standardUserDefaults] objectForKey:@"cachedData"] mutableCopy];
         
