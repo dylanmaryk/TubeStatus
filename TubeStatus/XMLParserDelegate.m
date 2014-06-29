@@ -10,9 +10,12 @@
 
 @implementation XMLParserDelegate {
     NSXMLParser *xmlParser;
+    
     NSDictionary *lineColours;
+    
     NSMutableArray *cachedSettings;
     NSMutableArray *newCachedData;
+    
     NSMutableDictionary *lineDict;
 }
 

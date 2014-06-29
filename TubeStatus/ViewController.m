@@ -7,14 +7,13 @@
 //
 
 #import "ViewController.h"
-#import "XMLParserDelegate.h"
+#import "DataModel.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController {
-    NSXMLParser *xmlParser;
     NSMutableArray *cachedData;
 }
 
@@ -23,26 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    XMLParserDelegate *xmlParserDelegate = [[XMLParserDelegate alloc] init];
+    DataModel *dataModel = [[DataModel alloc] init];
     
-    xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://cloud.tfl.gov.uk/TrackerNet/LineStatus"]];
-    [xmlParser setDelegate:xmlParserDelegate];
-    
-    if ([xmlParser parse] || [[NSUserDefaults standardUserDefaults] objectForKey:@"cachedData"]) {
-        cachedData = [[[NSUserDefaults standardUserDefaults] objectForKey:@"cachedData"] mutableCopy];
-    } else {
-        // No cached data, show error message
-    }
-    
-    for (int i = 0; i < cachedData.count; i++) {
-        NSMutableDictionary *lineDict = [cachedData[i] mutableCopy];
-        
-        cachedData[i] = lineDict;
-    }
+    cachedData = [dataModel getRefreshedData];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [cachedData count];
 }
 
@@ -91,6 +76,8 @@
     
     [[NSUserDefaults standardUserDefaults] setObject:cachedData forKey:@"cachedData"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    // Call refreshData here? May impact performance, but otherwise cached data not updated until viewDidLoad called again or widget displayed.
 }
 
 @end
