@@ -10,4 +10,6 @@
 
 @interface TodayLineTableViewCell : UITableViewCell
 
+@property (nonatomic, retain) IBOutlet UIView *lineColour;
+
 @end

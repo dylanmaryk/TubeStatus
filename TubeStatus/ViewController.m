@@ -32,7 +32,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return lineTableViewCell.frame.size.height;
+    return 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -49,17 +49,12 @@
     CGRect cellFrame = cell.frame;
     cellFrame.size.width = tableView.frame.size.width;
     
-    NSString *colourForLineString = [cachedData[indexPath.row] valueForKey:@"colour"];
+    NSData *lineColourData = [cachedData[indexPath.row] valueForKey:@"colour"];
     
-    unsigned int red, green, blue;
-    
-    sscanf([colourForLineString UTF8String], "#%02X%02X%02X", &red, &green, &blue);
-    
-    UIColor *colourForLine = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1];
+    UIColor *lineColourColor = [NSKeyedUnarchiver unarchiveObjectWithData:lineColourData];
     
     [cell setFrame:cellFrame];
-    [cell.lineColour setBackgroundColor:colourForLine];
-    [cell.lineColourExtended setBackgroundColor:colourForLine];
+    [cell.lineColour setBackgroundColor:lineColourColor];
     [cell.lineName setText:[cachedData[indexPath.row] valueForKey:@"name"]];
     [cell.lineSetting setOn:[[cachedData[indexPath.row] valueForKey:@"setting"] boolValue]];
     [cell.lineSetting setTag:indexPath.row];

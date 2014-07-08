@@ -11,19 +11,34 @@
 @implementation XMLParserDelegate {
     NSXMLParser *xmlParser;
     
-    NSDictionary *lineColours;
+    NSMutableDictionary *lineColours;
+    NSMutableDictionary *lineDict;
     
     NSMutableArray *cachedSettings;
     NSMutableArray *newCachedData;
-    
-    NSMutableDictionary *lineDict;
 }
 
 - (id)init {
     self = [super init];
     
     if (self) {
-        lineColours = [[NSDictionary alloc] initWithObjectsAndKeys:@"#AE6118", @"Bakerloo", @"#E41F1F", @"Central", @"#F8D42D", @"Circle", @"#007229", @"District", @"#00BBB4", @"DLR", @"#E899A8", @"Hammersmith and City", @"#686E72", @"Jubilee", @"#893267", @"Metropolitan", @"#000000", @"Northern", @"#F86C00", @"Overground", @"#0450A1", @"Piccadilly", @"#009FE0", @"Victoria", @"#70C3CE", @"Waterloo and City", nil];
+        lineColours = [[NSMutableDictionary alloc] init];
+        
+        NSDictionary *lineRGBs = [[NSDictionary alloc] initWithObjectsAndKeys:@"#AE6118", @"Bakerloo", @"#E41F1F", @"Central", @"#F8D42D", @"Circle", @"#007229", @"District", @"#00BBB4", @"DLR", @"#E899A8", @"Hammersmith and City", @"#686E72", @"Jubilee", @"#893267", @"Metropolitan", @"#000000", @"Northern", @"#F86C00", @"Overground", @"#0450A1", @"Piccadilly", @"#009FE0", @"Victoria", @"#70C3CE", @"Waterloo and City", nil];
+        
+        for (id line in lineRGBs) {
+            NSString *colourForLineString = [lineRGBs valueForKey:line];
+            
+            unsigned int red, green, blue;
+            
+            sscanf([colourForLineString UTF8String], "#%02X%02X%02X", &red, &green, &blue);
+            
+            UIColor *colourForLineColor = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1];
+            
+            NSData *colourForLineData = [NSKeyedArchiver archivedDataWithRootObject:colourForLineColor];
+            
+            [lineColours setValue:colourForLineData forKey:line];
+        }
     }
     
     return self;

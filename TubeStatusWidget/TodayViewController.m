@@ -19,22 +19,16 @@
     NSMutableArray *cachedData;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder {
-    self = [super initWithCoder:aDecoder];
-    
-    if (self) {
-        
-    }
-    
-    return self;
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
+- (void)viewDidLoad {
+    [super viewDidLoad];
     
     DataModel *dataModel = [[DataModel alloc] init];
     
     cachedData = [dataModel getRefreshedData];
+    
+    [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cachedData count] * 44)];
+    
+    // Above code should also be called when widget performs update.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -42,7 +36,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return todayLineTableViewCell.frame.size.height;
+    return 44;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -56,11 +50,23 @@
         cell = todayLineTableViewCell;
     }
     
+    CGRect cellFrame = cell.frame;
+    cellFrame.size.width = tableView.frame.size.width;
+    
+    NSData *lineColourData = [cachedData[indexPath.row] valueForKey:@"colour"];
+    
+    UIColor *lineColourColor = [NSKeyedUnarchiver unarchiveObjectWithData:lineColourData];
+    
+    [cell setFrame:cellFrame];
+    [cell.lineColour setBackgroundColor:lineColourColor];
+    
     return cell;
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     completionHandler(NCUpdateResultNewData);
+    
+    // Handle update success/failure.
 }
 
 @end
