@@ -16,19 +16,21 @@
 @end
 
 @implementation TodayViewController {
+    DataModel *dataModel;
+    
     NSMutableArray *cachedData;
 }
+
+@synthesize todayLineTableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    DataModel *dataModel = [[DataModel alloc] init];
+    dataModel = [[DataModel alloc] init];
     
-    cachedData = [dataModel getRefreshedDataWithSelectedLinesOnly:YES];
+    [self loadData:NO];
     
-    [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cachedData count] * 44)];
-    
-    // Above code should also be called when widget performs update.
+    // Handle no cached data.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -64,9 +66,21 @@
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    completionHandler(NCUpdateResultNewData);
+    [self loadData:YES];
     
-    // Handle update success/failure.
+    // Handle no cached data.
+    
+    [todayLineTableView reloadData];
+    
+    // Handle update success/failure properly.
+    
+    completionHandler(NCUpdateResultNewData);
+}
+
+- (void)loadData:(bool)refreshedData {
+    cachedData = [dataModel getDataWithSelectedLinesOnly:YES refreshedData:refreshedData];
+    
+    [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cachedData count] * 44)];
 }
 
 @end

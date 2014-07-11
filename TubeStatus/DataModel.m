@@ -23,11 +23,19 @@
     return self;
 }
 
-- (NSMutableArray *)getRefreshedDataWithSelectedLinesOnly:(bool)selectedLinesOnly {
+- (NSMutableArray *)getDataWithSelectedLinesOnly:(bool)selectedLinesOnly refreshedData:(bool)refreshedData {
     NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://cloud.tfl.gov.uk/TrackerNet/LineStatus"]];
     [xmlParser setDelegate:xmlParserDelegate];
     
-    if ([xmlParser parse] || [[NSUserDefaults standardUserDefaults] objectForKey:@"cachedData"]) {
+    bool dataAvailable;
+    
+    if (refreshedData) {
+        dataAvailable = [xmlParser parse];
+    } else {
+        dataAvailable = [[NSUserDefaults standardUserDefaults] objectForKey:@"cachedData"];
+    }
+    
+    if (dataAvailable) {
         NSMutableArray *cachedData = [[[NSUserDefaults standardUserDefaults] objectForKey:@"cachedData"] mutableCopy];
         
         // Test "selectedLinesOnly" after implementing shared data
@@ -52,8 +60,6 @@
         
         return cachedData;
     } else {
-        // No cached data, show error message.
-        
         return nil;
     }
 }

@@ -24,7 +24,9 @@
     
     DataModel *dataModel = [[DataModel alloc] init];
     
-    cachedData = [dataModel getRefreshedDataWithSelectedLinesOnly:NO];
+    cachedData = [dataModel getDataWithSelectedLinesOnly:NO refreshedData:NO];
+    
+    // Handle no cached data.
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -72,7 +74,7 @@
     [[NSUserDefaults standardUserDefaults] setObject:cachedData forKey:@"cachedData"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    // Call refreshData here? May impact performance, but otherwise cached data not updated until viewDidLoad called again or widget displayed.
+    // Refresh data here? May impact performance, but otherwise cached data not updated until viewDidLoad called again or widget displayed.
 }
 
 @end
