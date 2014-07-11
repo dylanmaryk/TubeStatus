@@ -14,6 +14,8 @@
 @end
 
 @implementation ViewController {
+    DataModel *dataModel;
+    
     NSMutableArray *cachedData;
 }
 
@@ -22,11 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    DataModel *dataModel = [[DataModel alloc] init];
+    dataModel = [[DataModel alloc] init];
     
-    cachedData = [dataModel getDataWithSelectedLinesOnly:NO refreshedData:NO];
-    
-    // Handle no cached data.
+    [self loadDataRefreshed:NO tryLoadingRefreshedDataIfFails:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -74,7 +74,27 @@
     [[NSUserDefaults standardUserDefaults] setObject:cachedData forKey:@"cachedData"];
     [[NSUserDefaults standardUserDefaults] synchronize];
     
-    // Refresh data here? May impact performance, but otherwise cached data not updated until viewDidLoad called again or widget displayed.
+    // Refresh data using code below? May impact performance, but otherwise cached data not updated until viewDidLoad called again or widget displayed. Not refreshing data here results in cached data being "reset" to when viewDidLoad was called.
+    
+    [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:nil];
+}
+
+- (void)loadDataRefreshed:(bool)refreshedData tryLoadingRefreshedDataIfFails:(bool)tryLoadingRefreshedDataIfFails {
+    cachedData = [dataModel getDataWithSelectedLinesOnly:NO refreshedData:refreshedData];
+    
+    if (cachedData) {
+        [lineTableView reloadData];
+    } else {
+        if (refreshedData) {
+            [self loadDataRefreshed:NO tryLoadingRefreshedDataIfFails:NO];
+        } else {
+            if (tryLoadingRefreshedDataIfFails) {
+                [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:nil];
+            } else {
+                // Handle no cached data.
+            }
+        }
+    }
 }
 
 @end

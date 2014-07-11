@@ -28,9 +28,7 @@
     
     dataModel = [[DataModel alloc] init];
     
-    [self loadData:NO];
-    
-    // Handle no cached data.
+    [self loadDataRefreshed:NO];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -66,21 +64,23 @@
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    [self loadData:YES];
-    
-    // Handle no cached data.
-    
-    [todayLineTableView reloadData];
-    
-    // Handle update success/failure properly.
-    
-    completionHandler(NCUpdateResultNewData);
+    [self loadDataRefreshed:YES];
 }
 
-- (void)loadData:(bool)refreshedData {
+- (void)loadDataRefreshed:(bool)refreshedData {
     cachedData = [dataModel getDataWithSelectedLinesOnly:YES refreshedData:refreshedData];
     
-    [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cachedData count] * 44)];
+    if (cachedData) {
+        [todayLineTableView reloadData];
+        
+        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cachedData count] * 44)];
+    } else {
+        if (refreshedData) {
+            [self loadDataRefreshed:NO];
+        } else {
+            // Handle zero lines, whether due to none selected or no cached data (set preferred content size accordingly).
+        }
+    }
 }
 
 @end
