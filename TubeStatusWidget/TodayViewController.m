@@ -24,7 +24,7 @@
     
     DataModel *dataModel = [[DataModel alloc] init];
     
-    cachedData = [dataModel getRefreshedData];
+    cachedData = [dataModel getRefreshedDataWithSelectedLinesOnly:YES];
     
     [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cachedData count] * 44)];
     

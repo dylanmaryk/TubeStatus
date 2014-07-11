@@ -10,6 +10,6 @@
 
 @interface DataModel : NSObject
 
-- (NSMutableArray *)getRefreshedData;
+- (NSMutableArray *)getRefreshedDataWithSelectedLinesOnly:(bool)selectedLinesOnly;
 
 @end

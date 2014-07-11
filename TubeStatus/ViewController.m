@@ -24,7 +24,7 @@
     
     DataModel *dataModel = [[DataModel alloc] init];
     
-    cachedData = [dataModel getRefreshedData];
+    cachedData = [dataModel getRefreshedDataWithSelectedLinesOnly:NO];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
