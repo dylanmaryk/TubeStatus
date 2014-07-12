@@ -38,8 +38,6 @@
     if (dataAvailable) {
         NSMutableArray *cachedData = [[[NSUserDefaults standardUserDefaults] objectForKey:@"cachedData"] mutableCopy];
         
-        // Test "selectedLinesOnly" after implementing shared data
-        
         if (selectedLinesOnly) {
             NSMutableArray *cachedDataSelectedLinesOnly = [NSMutableArray array];
             

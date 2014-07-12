@@ -65,6 +65,8 @@
 }
 
 - (IBAction)settingSwitchTapped:(id)sender {
+    cachedData = [dataModel getDataWithSelectedLinesOnly:NO refreshedData:NO];
+    
     NSInteger settingTag = ((UISwitch *)sender).tag;
     
     bool settingOn = ((UISwitch *)sender).isOn;
@@ -76,7 +78,7 @@
     
     // Refresh data using code below? May impact performance, but otherwise cached data not updated until viewDidLoad called again or widget displayed. Not refreshing data here results in cached data being "reset" to when viewDidLoad was called.
     
-    [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:nil];
+    // [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:nil];
 }
 
 - (void)loadDataRefreshed:(bool)refreshedData tryLoadingRefreshedDataIfFails:(bool)tryLoadingRefreshedDataIfFails {
@@ -84,16 +86,12 @@
     
     if (cachedData) {
         [lineTableView reloadData];
+    } else if (refreshedData) {
+        [self loadDataRefreshed:NO tryLoadingRefreshedDataIfFails:NO];
+    } else if (tryLoadingRefreshedDataIfFails) {
+        [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:nil];
     } else {
-        if (refreshedData) {
-            [self loadDataRefreshed:NO tryLoadingRefreshedDataIfFails:NO];
-        } else {
-            if (tryLoadingRefreshedDataIfFails) {
-                [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:nil];
-            } else {
-                // Handle no cached data.
-            }
-        }
+        // Handle no cached data.
     }
 }
 

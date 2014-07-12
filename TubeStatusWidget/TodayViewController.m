@@ -74,12 +74,10 @@
         [todayLineTableView reloadData];
         
         [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cachedData count] * 44)];
+    } else if (refreshedData) {
+        [self loadDataRefreshed:NO];
     } else {
-        if (refreshedData) {
-            [self loadDataRefreshed:NO];
-        } else {
-            // Handle zero lines, whether due to none selected or no cached data (set preferred content size accordingly).
-        }
+        // Handle zero lines, whether due to none selected or no cached data (set preferred content size accordingly).
     }
 }
 
