@@ -73,7 +73,7 @@
     if (cachedData) {
         [todayLineTableView reloadData];
         
-        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cachedData count] * 44)];
+        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, 30 + [cachedData count] * 44)];
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {
