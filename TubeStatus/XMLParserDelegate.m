@@ -16,6 +16,8 @@
     
     NSMutableArray *cachedSettings;
     NSMutableArray *newCachedData;
+    
+    NSDateFormatter *dateFormatter;
 }
 
 - (id)init {
@@ -39,6 +41,9 @@
             
             [lineColours setValue:colourForLineData forKey:line];
         }
+        
+        dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"HH:mm"];
     }
     
     return self;
@@ -85,6 +90,7 @@
     }
     
     [[NSUserDefaults standardUserDefaults] setObject:newCachedData forKey:@"cachedData"];
+    [[NSUserDefaults standardUserDefaults] setObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"lastUpdated"];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 

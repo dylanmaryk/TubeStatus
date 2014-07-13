@@ -42,6 +42,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="67"/>
                     <connections>
+                        <outlet property="lastUpdatedLabel" destination="SAr-Og-mEV" id="iZc-Vz-iJU"/>
                         <outlet property="todayLineTableView" destination="mwe-pq-vIl" id="lru-dp-uIJ"/>
                     </connections>
                 </viewController>

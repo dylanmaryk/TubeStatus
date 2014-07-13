@@ -15,5 +15,6 @@
 }
 
 @property (nonatomic, retain) IBOutlet UITableView *todayLineTableView;
+@property (nonatomic, retain) IBOutlet UILabel *lastUpdatedLabel;
 
 @end

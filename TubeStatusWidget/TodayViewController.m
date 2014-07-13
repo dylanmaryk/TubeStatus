@@ -21,7 +21,7 @@
     NSMutableArray *cachedData;
 }
 
-@synthesize todayLineTableView;
+@synthesize todayLineTableView, lastUpdatedLabel;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -64,7 +64,15 @@
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
+    NSArray *cachedDataTemp = cachedData;
+    
     [self loadDataRefreshed:YES];
+    
+    if ([cachedData isEqualToArray:cachedDataTemp]) {
+        completionHandler(NCUpdateResultNoData);
+    } else {
+        completionHandler(NCUpdateResultNewData);
+    }
 }
 
 - (void)loadDataRefreshed:(bool)refreshedData {
@@ -74,6 +82,8 @@
         [todayLineTableView reloadData];
         
         [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, 30 + [cachedData count] * 44)];
+        
+        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"lastUpdated"]]];
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {
