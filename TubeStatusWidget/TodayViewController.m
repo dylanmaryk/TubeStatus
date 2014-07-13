@@ -3,7 +3,7 @@
 //  TubeStatusWidget
 //
 //  Created by Dylan Maryk on 28/06/2014.
-//  Copyright (c) 2014 Code Canopy. All rights reserved.
+//  Copyright (c) 2014 Dylan Maryk. All rights reserved.
 //
 
 #import <NotificationCenter/NotificationCenter.h>
@@ -19,6 +19,8 @@
     DataModel *dataModel;
     
     NSMutableArray *cachedData;
+    
+    bool widgetNotUpdated;
 }
 
 @synthesize todayLineTableView, lastUpdatedLabel;
@@ -29,6 +31,16 @@
     dataModel = [[DataModel alloc] init];
     
     [self loadDataRefreshed:NO];
+    
+    widgetNotUpdated = YES;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    if (widgetNotUpdated) {
+        [self loadDataRefreshed:YES];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -73,6 +85,8 @@
     } else {
         completionHandler(NCUpdateResultNewData);
     }
+    
+    widgetNotUpdated = NO;
 }
 
 - (void)loadDataRefreshed:(bool)refreshedData {

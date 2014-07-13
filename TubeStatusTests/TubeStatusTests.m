@@ -3,7 +3,7 @@
 //  TubeStatusTests
 //
 //  Created by Dylan Maryk on 28/06/2014.
-//  Copyright (c) 2014 Code Canopy. All rights reserved.
+//  Copyright (c) 2014 Dylan Maryk. All rights reserved.
 //
 
 #import <XCTest/XCTest.h>

@@ -23,7 +23,7 @@
 		FCE51B68195F237D0006C348 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE51B67195F237D0006C348 /* NotificationCenter.framework */; };
 		FCE51B6E195F237D0006C348 /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE51B6D195F237D0006C348 /* TodayViewController.m */; };
 		FCE51B70195F237D0006C348 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE51B6F195F237D0006C348 /* MainInterface.storyboard */; };
-		FCE51B73195F237D0006C348 /* com.codecanopy.TubeStatus.TubeStatusWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCE51B65195F237D0006C348 /* com.codecanopy.TubeStatus.TubeStatusWidget.appex */; };
+		FCE51B73195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCE51B65195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex */; };
 		FCE51B7C195F251B0006C348 /* XMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE51B7B195F251B0006C348 /* XMLParserDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -58,7 +58,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				FCE51B73195F237D0006C348 /* com.codecanopy.TubeStatus.TubeStatusWidget.appex in Embed App Extensions */,
+				FCE51B73195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,7 +86,7 @@
 		FCE51B51195F236C0006C348 /* TubeStatusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TubeStatusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE51B56195F236C0006C348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCE51B57195F236C0006C348 /* TubeStatusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TubeStatusTests.m; sourceTree = "<group>"; };
-		FCE51B65195F237D0006C348 /* com.codecanopy.TubeStatus.TubeStatusWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = com.codecanopy.TubeStatus.TubeStatusWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCE51B65195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = com.dylanmaryk.TubeStatus.TubeStatusWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE51B67195F237D0006C348 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		FCE51B6B195F237D0006C348 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCE51B6C195F237D0006C348 /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
@@ -138,7 +138,7 @@
 			children = (
 				FCE51B3B195F236C0006C348 /* TubeStatus.app */,
 				FCE51B51195F236C0006C348 /* TubeStatusTests.xctest */,
-				FCE51B65195F237D0006C348 /* com.codecanopy.TubeStatus.TubeStatusWidget.appex */,
+				FCE51B65195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,7 +275,7 @@
 			);
 			name = TubeStatusWidget;
 			productName = TubeStatusWidget;
-			productReference = FCE51B65195F237D0006C348 /* com.codecanopy.TubeStatus.TubeStatusWidget.appex */;
+			productReference = FCE51B65195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -571,7 +571,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = "com.codecanopy.TubeStatus.$(TARGET_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "com.dylanmaryk.TubeStatus.$(TARGET_NAME:rfc1034identifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -584,7 +584,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = "com.codecanopy.TubeStatus.$(TARGET_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "com.dylanmaryk.TubeStatus.$(TARGET_NAME:rfc1034identifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
