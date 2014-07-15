@@ -76,15 +76,11 @@
 }
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
-    NSArray *cachedDataTemp = cachedData;
-    
     [self loadDataRefreshed:YES];
     
-    if ([cachedData isEqualToArray:cachedDataTemp]) {
-        completionHandler(NCUpdateResultNoData);
-    } else {
-        completionHandler(NCUpdateResultNewData);
-    }
+    // Handle completionHandler correctly.
+    
+    completionHandler(NCUpdateResultNewData);
     
     widgetNotUpdated = NO;
 }
@@ -93,11 +89,15 @@
     cachedData = [dataModel getDataWithSelectedLinesOnly:YES refreshedData:refreshedData];
     
     if (cachedData) {
-        [todayLineTableView reloadData];
+        CGRect tableFrame = todayLineTableView.frame;
+        tableFrame.size.height = [cachedData count] * 44;
         
-        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, 30 + [cachedData count] * 44)];
+        [todayLineTableView reloadData];
+        [todayLineTableView setFrame:tableFrame];
         
         [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"] valueForKey:@"lastUpdated"]]];
+        
+        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, 30 + [cachedData count] * 44)];
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {

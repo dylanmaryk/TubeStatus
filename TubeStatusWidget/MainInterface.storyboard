@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mwe-pq-vIl">
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mwe-pq-vIl">
                                 <rect key="frame" x="0.0" y="30" width="320" height="37"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -32,8 +32,12 @@
                             </label>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="mwe-pq-vIl" firstAttribute="top" secondItem="SAr-Og-mEV" secondAttribute="bottom" constant="5" id="1iY-au-pTO"/>
                             <constraint firstAttribute="trailing" secondItem="SAr-Og-mEV" secondAttribute="trailing" id="HV7-4M-fe2"/>
+                            <constraint firstAttribute="trailing" secondItem="mwe-pq-vIl" secondAttribute="trailing" id="eRR-nm-u13"/>
+                            <constraint firstItem="mwe-pq-vIl" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="krP-M9-stf"/>
                             <constraint firstItem="SAr-Og-mEV" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="5" id="pPH-Ja-iMw"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" secondItem="mwe-pq-vIl" secondAttribute="bottom" id="ulf-4D-3R3"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
