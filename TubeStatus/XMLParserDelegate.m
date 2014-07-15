@@ -9,15 +9,11 @@
 #import "XMLParserDelegate.h"
 
 @implementation XMLParserDelegate {
-    NSXMLParser *xmlParser;
-    
     NSMutableDictionary *lineColours;
     NSMutableDictionary *lineDict;
     
     NSMutableArray *cachedSettings;
     NSMutableArray *newCachedData;
-    
-    NSDateFormatter *dateFormatter;
 }
 
 - (id)init {
@@ -41,9 +37,6 @@
             
             [lineColours setValue:colourForLineData forKey:line];
         }
-        
-        dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateFormat:@"HH:mm"];
     }
     
     return self;
@@ -53,8 +46,10 @@
     cachedSettings = [NSMutableArray array];
     newCachedData = [NSMutableArray array];
     
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"cachedData"]) {
-        for (NSDictionary *line in [[NSUserDefaults standardUserDefaults] objectForKey:@"cachedData"]) {
+    NSArray *cachedData = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"] objectForKey:@"cachedData"];
+    
+    if (cachedData) {
+        for (NSDictionary *line in cachedData) {
             [cachedSettings addObject:[line objectForKey:@"setting"]];
         }
     }
@@ -89,9 +84,13 @@
         }
     }
     
-    [[NSUserDefaults standardUserDefaults] setObject:newCachedData forKey:@"cachedData"];
-    [[NSUserDefaults standardUserDefaults] setObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"lastUpdated"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"HH:mm"];
+    
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"];
+    [userDefaults setObject:newCachedData forKey:@"cachedData"];
+    [userDefaults setObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"lastUpdated"];
+    [userDefaults synchronize];
 }
 
 @end

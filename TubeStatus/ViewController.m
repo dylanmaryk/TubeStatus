@@ -73,8 +73,9 @@
     
     [cachedData[settingTag] setValue:[NSNumber numberWithBool:settingOn] forKey:@"setting"];
     
-    [[NSUserDefaults standardUserDefaults] setObject:cachedData forKey:@"cachedData"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"];
+    [userDefaults setObject:cachedData forKey:@"cachedData"];
+    [userDefaults synchronize];
     
     // Refresh data using code below? May impact performance, but otherwise cached data not updated until viewDidLoad called again or widget displayed. Not refreshing data here results in cached data being "reset" to when viewDidLoad was called.
     

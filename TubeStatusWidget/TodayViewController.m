@@ -97,7 +97,7 @@
         
         [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, 30 + [cachedData count] * 44)];
         
-        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"lastUpdated"]]];
+        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"] valueForKey:@"lastUpdated"]]];
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {
