@@ -89,8 +89,6 @@
     cachedData = [dataModel getDataWithSelectedLinesOnly:YES refreshedData:refreshedData];
     
     if (cachedData) {
-        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"] valueForKey:@"lastUpdated"]]];
-        
         CGRect tableFrame = todayLineTableView.frame;
         
         unsigned long preferredTableHeight = [cachedData count] * 44;
@@ -100,7 +98,11 @@
         [todayLineTableView setFrame:tableFrame];
         [todayLineTableView reloadData];
         
-        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, tableFrame.origin.y + preferredTableHeight)];
+        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"] valueForKey:@"lastUpdated"]]];
+        
+        int preferredWidgetHeight = tableFrame.origin.y + preferredTableHeight;
+        
+        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, preferredWidgetHeight)];
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {

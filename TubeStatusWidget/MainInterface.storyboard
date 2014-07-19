@@ -13,19 +13,19 @@
                         <viewControllerLayoutGuide type="bottom" id="FKl-LY-JtV"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="S3S-Oj-5AN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="68"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mwe-pq-vIl">
-                                <rect key="frame" x="0.0" y="30" width="320" height="37"/>
+                            <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="mwe-pq-vIl">
+                                <rect key="frame" x="0.0" y="31" width="320" height="37"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="M4Y-Lb-cyx" id="eaQ-Jw-pKU"/>
                                     <outlet property="delegate" destination="M4Y-Lb-cyx" id="VYx-2F-HsD"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Last updated: Never" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-Og-mEV">
-                                <rect key="frame" x="0.0" y="5" width="320" height="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last updated: Never" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-Og-mEV">
+                                <rect key="frame" x="0.0" y="5" width="320" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -33,7 +33,8 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="mwe-pq-vIl" firstAttribute="top" secondItem="SAr-Og-mEV" secondAttribute="bottom" constant="5" id="1iY-au-pTO"/>
-                            <constraint firstAttribute="trailing" secondItem="SAr-Og-mEV" secondAttribute="trailing" id="HV7-4M-fe2"/>
+                            <constraint firstItem="SAr-Og-mEV" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="JsZ-XU-m0C"/>
+                            <constraint firstAttribute="trailing" secondItem="SAr-Og-mEV" secondAttribute="trailing" id="XAW-Sx-nmk"/>
                             <constraint firstAttribute="trailing" secondItem="mwe-pq-vIl" secondAttribute="trailing" id="eRR-nm-u13"/>
                             <constraint firstItem="mwe-pq-vIl" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="krP-M9-stf"/>
                             <constraint firstItem="SAr-Og-mEV" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="5" id="pPH-Ja-iMw"/>
@@ -45,7 +46,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="67"/>
+                    <size key="freeformSize" width="320" height="68"/>
                     <connections>
                         <outlet property="lastUpdatedLabel" destination="SAr-Og-mEV" id="iZc-Vz-iJU"/>
                         <outlet property="todayLineTableView" destination="mwe-pq-vIl" id="lru-dp-uIJ"/>
