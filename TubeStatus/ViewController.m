@@ -51,15 +51,29 @@
     CGRect cellFrame = cell.frame;
     cellFrame.size.width = tableView.frame.size.width;
     
+    [cell setFrame:cellFrame];
+    
+    if (indexPath.row > 0) {
+        UIView *separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(cell.lineColour.frame.size.width, 0, cellFrame.size.width - cell.lineColour.frame.size.width, 1)];
+        [separatorLineView setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1]];
+        
+        [cell.contentView addSubview:separatorLineView];
+    }
+    
     NSData *lineColourData = [cachedData[indexPath.row] valueForKey:@"colour"];
     
     UIColor *lineColourColor = [NSKeyedUnarchiver unarchiveObjectWithData:lineColourData];
     
-    [cell setFrame:cellFrame];
     [cell.lineColour setBackgroundColor:lineColourColor];
     [cell.lineName setText:[cachedData[indexPath.row] valueForKey:@"name"]];
     [cell.lineSetting setOn:[[cachedData[indexPath.row] valueForKey:@"setting"] boolValue]];
     [cell.lineSetting setTag:indexPath.row];
+    
+//    if (indexPath.row % 2 == 0) {
+//        [cell setBackgroundColor:[UIColor whiteColor]];
+//    } else {
+//        [cell setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1]];
+//    }
     
     return cell;
 }
