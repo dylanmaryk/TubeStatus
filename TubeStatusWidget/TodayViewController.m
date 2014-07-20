@@ -20,8 +20,6 @@
     
     bool widgetNotUpdated;
     
-//    int tableHeight;
-    
     NSMutableArray *cachedData;
 }
 
@@ -33,8 +31,6 @@
     dataModel = [[DataModel alloc] init];
     
     widgetNotUpdated = YES;
-    
-//    tableHeight = 0;
     
     [self loadDataRefreshed:NO];
 }
@@ -52,13 +48,9 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UILabel *lineStatusLabelTemp = [[UILabel alloc] initWithFrame:CGRectMake(28, 21, tableView.frame.size.width - 48, 21)];
-    [lineStatusLabelTemp setNumberOfLines:0];
-    [lineStatusLabelTemp setLineBreakMode:NSLineBreakByWordWrapping];
+    CGRect statusLabelRect = [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:indexPath.row] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}] boundingRectWithSize:CGSizeMake(todayLineTableView.frame.size.width - 48, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil];
     
-    [self setStatusLabel:lineStatusLabelTemp forRow:indexPath.row];
-    
-    return lineStatusLabelTemp.frame.origin.y + lineStatusLabelTemp.frame.size.height + 2;
+    return 28 + statusLabelRect.size.height + 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -83,8 +75,8 @@
     
     [cell.lineColourView setBackgroundColor:lineColourColor];
     [cell.lineNameLabel setText:[cachedData[indexPath.row] valueForKey:@"name"]];
-    
-    [self setStatusLabel:cell.lineStatusLabel forRow:indexPath.row];
+    [cell.lineStatusLabel setText:[self lineStatusLabelTextForRow:indexPath.row]];
+    [cell.lineStatusLabel sizeToFit];
     
     return cell;
 }
@@ -103,23 +95,33 @@
     cachedData = [dataModel getDataWithSelectedLinesOnly:YES refreshedData:refreshedData];
     
     if (cachedData) {
+        CGRect tableFrame = todayLineTableView.frame;
+        
+//        NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"];
+        
         CGFloat tableHeight = 0;
+//        CGFloat tableHeightOld = [[userDefaults valueForKey:@"widgetTableHeight"] floatValue];
         
         for (int i = 0; i < [todayLineTableView numberOfRowsInSection:0]; i++) {
             tableHeight += [self tableView:todayLineTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
         }
         
-        CGRect tableFrame = todayLineTableView.frame;
         tableFrame.size.height = tableHeight;
         
         [todayLineTableView setFrame:tableFrame];
         [todayLineTableView reloadData];
         
+//        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [userDefaults valueForKey:@"lastUpdated"]]];
         [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"] valueForKey:@"lastUpdated"]]];
         
-        int preferredWidgetHeight = tableFrame.origin.y + tableHeight;
-        
-        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, preferredWidgetHeight)];
+//        if ((int)tableHeight != (int)tableHeightOld && refreshedData) {
+            int preferredWidgetHeight = tableFrame.origin.y + tableHeight;
+            
+            [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, preferredWidgetHeight)];
+            
+//            [userDefaults setValue:[NSNumber numberWithFloat:tableHeight] forKey:@"widgetTableHeight"];
+//            [userDefaults synchronize];
+//        }
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {
@@ -127,17 +129,15 @@
     }
 }
 
-- (void)setStatusLabel:(UILabel *)statusLabel forRow:(NSInteger)row {
+- (NSString *)lineStatusLabelTextForRow:(NSInteger)row {
     NSString *lineDescription = [cachedData[row] valueForKey:@"description"];
     NSString *lineStatusDetails = [cachedData[row] valueForKey:@"statusDetails"];
     
     if (![lineStatusDetails isEqualToString:@""]) {
-        [statusLabel setText:[NSString stringWithFormat:@"%@: %@", lineDescription, lineStatusDetails]];
+        return [NSString stringWithFormat:@"%@: %@", lineDescription, lineStatusDetails];
     } else {
-        [statusLabel setText:[NSString stringWithFormat:@"%@", lineDescription]];
+        return [NSString stringWithFormat:@"%@", lineDescription];
     }
-    
-    [statusLabel sizeToFit];
 }
 
 @end

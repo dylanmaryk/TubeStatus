@@ -9,7 +9,7 @@
 #import "XMLParserDelegate.h"
 
 @implementation XMLParserDelegate {
-    NSMutableDictionary *lineColours;
+    NSMutableDictionary *lineColoursDict;
     NSMutableDictionary *lineDict;
     
     NSMutableArray *cachedSettings;
@@ -20,7 +20,7 @@
     self = [super init];
     
     if (self) {
-        lineColours = [[NSMutableDictionary alloc] init];
+        lineColoursDict = [[NSMutableDictionary alloc] init];
         
         NSDictionary *lineRGBs = [[NSDictionary alloc] initWithObjectsAndKeys:@"#AE6118", @"Bakerloo", @"#E41F1F", @"Central", @"#F8D42D", @"Circle", @"#007229", @"District", @"#00BBB4", @"DLR", @"#E899A8", @"Hammersmith and City", @"#686E72", @"Jubilee", @"#893267", @"Metropolitan", @"#000000", @"Northern", @"#F86C00", @"Overground", @"#0450A1", @"Piccadilly", @"#009FE0", @"Victoria", @"#70C3CE", @"Waterloo and City", nil];
         
@@ -35,7 +35,7 @@
             
             NSData *colourForLineData = [NSKeyedArchiver archivedDataWithRootObject:colourForLineColor];
             
-            [lineColours setValue:colourForLineData forKey:line];
+            [lineColoursDict setValue:colourForLineData forKey:line];
         }
     }
     
@@ -61,7 +61,7 @@
         [lineDict setValue:[attributeDict valueForKey:@"StatusDetails"] forKey:@"statusDetails"];
     } else if ([elementName isEqualToString:@"Line"]) {
         [lineDict setValue:[attributeDict valueForKey:@"Name"] forKey:@"name"];
-        [lineDict setValue:[lineColours valueForKey:[attributeDict valueForKey:@"Name"]] forKey:@"colour"];
+        [lineDict setValue:[lineColoursDict valueForKey:[attributeDict valueForKey:@"Name"]] forKey:@"colour"];
     } else if ([elementName isEqualToString:@"Status"] && [lineDict objectForKey:@"name"]) {
         [lineDict setValue:[attributeDict valueForKey:@"Description"] forKey:@"description"];
         
