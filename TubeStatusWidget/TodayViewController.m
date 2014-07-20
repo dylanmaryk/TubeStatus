@@ -65,12 +65,23 @@
     CGRect cellFrame = cell.frame;
     cellFrame.size.width = tableView.frame.size.width;
     
+    [cell setFrame:cellFrame];
+    
     NSData *lineColourData = [cachedData[indexPath.row] valueForKey:@"colour"];
     
     UIColor *lineColourColor = [NSKeyedUnarchiver unarchiveObjectWithData:lineColourData];
     
-    [cell setFrame:cellFrame];
     [cell.lineColour setBackgroundColor:lineColourColor];
+    [cell.lineName setText:[cachedData[indexPath.row] valueForKey:@"name"]];
+    
+    NSString *lineDescription = [cachedData[indexPath.row] valueForKey:@"description"];
+    NSString *lineStatusDetails = [cachedData[indexPath.row] valueForKey:@"statusDetails"];
+    
+    if (![lineStatusDetails isEqualToString:@""]) {
+        [cell.lineStatus setText:[NSString stringWithFormat:@"%@: %@", lineDescription, lineStatusDetails]];
+    } else {
+        [cell.lineStatus setText:[NSString stringWithFormat:@"%@", lineDescription]];
+    }
     
     return cell;
 }
@@ -78,11 +89,11 @@
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     [self loadDataRefreshed:YES];
     
+    widgetNotUpdated = NO;
+    
     // Handle completionHandler correctly.
     
     completionHandler(NCUpdateResultNewData);
-    
-    widgetNotUpdated = NO;
 }
 
 - (void)loadDataRefreshed:(bool)refreshedData {
