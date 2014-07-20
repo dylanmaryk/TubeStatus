@@ -97,10 +97,7 @@
     if (cachedData) {
         CGRect tableFrame = todayLineTableView.frame;
         
-//        NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"];
-        
         CGFloat tableHeight = 0;
-//        CGFloat tableHeightOld = [[userDefaults valueForKey:@"widgetTableHeight"] floatValue];
         
         for (int i = 0; i < [todayLineTableView numberOfRowsInSection:0]; i++) {
             tableHeight += [self tableView:todayLineTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
@@ -111,17 +108,11 @@
         [todayLineTableView setFrame:tableFrame];
         [todayLineTableView reloadData];
         
-//        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [userDefaults valueForKey:@"lastUpdated"]]];
         [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"] valueForKey:@"lastUpdated"]]];
         
-//        if ((int)tableHeight != (int)tableHeightOld && refreshedData) {
-            int preferredWidgetHeight = tableFrame.origin.y + tableHeight;
-            
-            [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, preferredWidgetHeight)];
-            
-//            [userDefaults setValue:[NSNumber numberWithFloat:tableHeight] forKey:@"widgetTableHeight"];
-//            [userDefaults synchronize];
-//        }
+        int preferredWidgetHeight = tableFrame.origin.y + tableHeight;
+        
+        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, preferredWidgetHeight)];
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {
