@@ -69,12 +69,6 @@
     [cell.lineSettingSwitch setOn:[[cachedData[indexPath.row] valueForKey:@"setting"] boolValue]];
     [cell.lineSettingSwitch setTag:indexPath.row];
     
-//    if (indexPath.row % 2 == 0) {
-//        [cell setBackgroundColor:[UIColor whiteColor]];
-//    } else {
-//        [cell setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1]];
-//    }
-    
     return cell;
 }
 
