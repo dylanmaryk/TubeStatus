@@ -39,9 +39,9 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="lineColour" destination="Vka-gM-Mq4" id="yuP-ln-Vor"/>
-                <outlet property="lineName" destination="gHq-aT-NwE" id="1Ew-bY-XeT"/>
-                <outlet property="lineSetting" destination="xqg-b8-Chu" id="BLa-hs-n0w"/>
+                <outlet property="lineColourView" destination="Vka-gM-Mq4" id="fUH-Kl-Hmw"/>
+                <outlet property="lineNameLabel" destination="gHq-aT-NwE" id="4qv-re-spC"/>
+                <outlet property="lineSettingSwitch" destination="xqg-b8-Chu" id="QIt-r7-CIp"/>
             </connections>
             <point key="canvasLocation" x="0.0" y="-1"/>
         </tableViewCell>

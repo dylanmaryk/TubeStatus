@@ -10,8 +10,8 @@
 
 @interface TodayLineTableViewCell : UITableViewCell
 
-@property (nonatomic, retain) IBOutlet UIView *lineColour;
-@property (nonatomic, retain) IBOutlet UILabel *lineName;
-@property (nonatomic, retain) IBOutlet UILabel *lineStatus;
+@property (nonatomic, retain) IBOutlet UIView *lineColourView;
+@property (nonatomic, retain) IBOutlet UILabel *lineNameLabel;
+@property (nonatomic, retain) IBOutlet UILabel *lineStatusLabel;
 
 @end

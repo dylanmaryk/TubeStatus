@@ -54,7 +54,7 @@
     [cell setFrame:cellFrame];
     
     if (indexPath.row > 0) {
-        UIView *separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(cell.lineColour.frame.size.width, 0, cellFrame.size.width - cell.lineColour.frame.size.width, 1)];
+        UIView *separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(cell.lineColourView.frame.size.width, 0, cellFrame.size.width - cell.lineColourView.frame.size.width, 1)];
         [separatorLineView setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1]];
         
         [cell.contentView addSubview:separatorLineView];
@@ -64,10 +64,10 @@
     
     UIColor *lineColourColor = [NSKeyedUnarchiver unarchiveObjectWithData:lineColourData];
     
-    [cell.lineColour setBackgroundColor:lineColourColor];
-    [cell.lineName setText:[cachedData[indexPath.row] valueForKey:@"name"]];
-    [cell.lineSetting setOn:[[cachedData[indexPath.row] valueForKey:@"setting"] boolValue]];
-    [cell.lineSetting setTag:indexPath.row];
+    [cell.lineColourView setBackgroundColor:lineColourColor];
+    [cell.lineNameLabel setText:[cachedData[indexPath.row] valueForKey:@"name"]];
+    [cell.lineSettingSwitch setOn:[[cachedData[indexPath.row] valueForKey:@"setting"] boolValue]];
+    [cell.lineSettingSwitch setTag:indexPath.row];
     
 //    if (indexPath.row % 2 == 0) {
 //        [cell setBackgroundColor:[UIColor whiteColor]];

@@ -19,19 +19,19 @@
                 <subviews>
                     <view contentMode="scaleToFill" id="wGe-2G-CPc">
                         <rect key="frame" x="0.0" y="0.0" width="20" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o7m-Ds-Gvz">
                         <rect key="frame" x="28" y="1" width="272" height="21"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k5e-EV-rtF">
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k5e-EV-rtF">
                         <rect key="frame" x="28" y="21" width="272" height="21"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -39,9 +39,9 @@
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="lineColour" destination="wGe-2G-CPc" id="jNM-4k-FqD"/>
-                <outlet property="lineName" destination="o7m-Ds-Gvz" id="wKK-xd-x9P"/>
-                <outlet property="lineStatus" destination="k5e-EV-rtF" id="IeI-S9-XK1"/>
+                <outlet property="lineColourView" destination="wGe-2G-CPc" id="tOT-ix-6nx"/>
+                <outlet property="lineNameLabel" destination="o7m-Ds-Gvz" id="Ojg-1d-LtH"/>
+                <outlet property="lineStatusLabel" destination="k5e-EV-rtF" id="oTK-Cc-zOd"/>
             </connections>
             <point key="canvasLocation" x="139" y="152"/>
         </tableViewCell>
