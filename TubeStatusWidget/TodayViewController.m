@@ -48,10 +48,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGRect statusLabelRect = [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:indexPath.row] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}] boundingRectWithSize:CGSizeMake(545 - 48, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil]; // TODO: Replace hard-coded "545" with dynamic value.
-    // CGRect statusLabelRect = [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:indexPath.row] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}] boundingRectWithSize:CGSizeMake(273 - 48, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil];
-    
-    return 23 + CGRectIntegral(statusLabelRect).size.height;
+    return 31 + CGRectIntegral([self lineStatusLabelFrameForRow:indexPath.row]).size.height;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -77,7 +74,17 @@
     [cell.lineColourView setBackgroundColor:lineColourColor];
     [cell.lineNameLabel setText:[cachedData[indexPath.row] valueForKey:@"name"]];
     [cell.lineStatusLabel setText:[self lineStatusLabelTextForRow:indexPath.row]];
-    [cell.lineStatusLabel sizeToFit];
+    
+    CGRect lineStatusLabelFrame = cell.lineStatusLabel.frame;
+    
+    CGFloat lineStatusLabelFrameX = lineStatusLabelFrame.origin.x;
+    CGFloat lineStatusLabelFrameY = lineStatusLabelFrame.origin.y;
+    
+    lineStatusLabelFrame = [self lineStatusLabelFrameForRow:indexPath.row];
+    lineStatusLabelFrame.origin.x = lineStatusLabelFrameX;
+    lineStatusLabelFrame.origin.y = lineStatusLabelFrameY;
+    
+    [cell.lineStatusLabel setFrame:lineStatusLabelFrame];
     
     return cell;
 }
@@ -119,6 +126,10 @@
     } else {
         // Handle zero lines, whether due to none selected or no cached data (set preferred content size accordingly).
     }
+}
+
+- (CGRect)lineStatusLabelFrameForRow:(NSInteger)row {
+    return [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:row] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}] boundingRectWithSize:CGSizeMake(todayLineTableView.frame.size.width - 8, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil]; // iPad hard-coded: "545"
 }
 
 - (NSString *)lineStatusLabelTextForRow:(NSInteger)row {
