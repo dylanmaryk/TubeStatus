@@ -48,7 +48,8 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    CGRect statusLabelRect = [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:indexPath.row] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}] boundingRectWithSize:CGSizeMake(todayLineTableView.frame.size.width - 48, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil];
+    CGRect statusLabelRect = [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:indexPath.row] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}] boundingRectWithSize:CGSizeMake(545 - 48, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil]; // TODO: Replace hard-coded "545" with dynamic value.
+    // CGRect statusLabelRect = [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:indexPath.row] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}] boundingRectWithSize:CGSizeMake(273 - 48, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil];
     
     return 23 + CGRectIntegral(statusLabelRect).size.height;
 }
@@ -112,7 +113,7 @@
         
         int preferredWidgetHeight = tableFrame.origin.y + tableHeight;
         
-        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, preferredWidgetHeight)];
+        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, preferredWidgetHeight)]; // TODO: Set widget height to only show line statuses that fit.
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {

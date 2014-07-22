@@ -11,7 +11,9 @@
 @interface LineTableViewCell : UITableViewCell
 
 @property (nonatomic, retain) IBOutlet UIView *lineColourView;
+
 @property (nonatomic, retain) IBOutlet UILabel *lineNameLabel;
+
 @property (nonatomic, retain) IBOutlet UISwitch *lineSettingSwitch;
 
 @end
