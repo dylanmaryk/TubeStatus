@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FC092A60195F4C46001BA2F6 /* LineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC092A5E195F4C46001BA2F6 /* LineTableViewCell.m */; };
 		FC092A61195F4C46001BA2F6 /* LineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC092A5F195F4C46001BA2F6 /* LineTableViewCell.xib */; };
+		FC67C3F119806F3A008B56AE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC67C3F019806F3A008B56AE /* SettingsViewController.m */; };
+		FC67C3F319807585008B56AE /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC67C3F219807585008B56AE /* license.txt */; };
 		FCD0141B196087D8000FDBF0 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0141A196087D8000FDBF0 /* DataModel.m */; };
 		FCD0141F19608C54000FDBF0 /* TodayLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0141D19608C54000FDBF0 /* TodayLineTableViewCell.m */; };
 		FCD0142019608C54000FDBF0 /* TodayLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD0141E19608C54000FDBF0 /* TodayLineTableViewCell.xib */; };
@@ -69,6 +71,9 @@
 		FC092A5D195F4C46001BA2F6 /* LineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTableViewCell.h; sourceTree = "<group>"; };
 		FC092A5E195F4C46001BA2F6 /* LineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTableViewCell.m; sourceTree = "<group>"; };
 		FC092A5F195F4C46001BA2F6 /* LineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineTableViewCell.xib; sourceTree = "<group>"; };
+		FC67C3EF19806F3A008B56AE /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		FC67C3F019806F3A008B56AE /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		FC67C3F219807585008B56AE /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		FCD01419196087D8000FDBF0 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		FCD0141A196087D8000FDBF0 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		FCD0141C19608C54000FDBF0 /* TodayLineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayLineTableViewCell.h; sourceTree = "<group>"; };
@@ -155,12 +160,15 @@
 				FC092A5D195F4C46001BA2F6 /* LineTableViewCell.h */,
 				FC092A5E195F4C46001BA2F6 /* LineTableViewCell.m */,
 				FC092A5F195F4C46001BA2F6 /* LineTableViewCell.xib */,
+				FC67C3EF19806F3A008B56AE /* SettingsViewController.h */,
+				FC67C3F019806F3A008B56AE /* SettingsViewController.m */,
 				FCD01419196087D8000FDBF0 /* DataModel.h */,
 				FCD0141A196087D8000FDBF0 /* DataModel.m */,
 				FCE51B7A195F251B0006C348 /* XMLParserDelegate.h */,
 				FCE51B7B195F251B0006C348 /* XMLParserDelegate.m */,
 				FCE51B48195F236C0006C348 /* Main.storyboard */,
 				FCE51B4B195F236C0006C348 /* Images.xcassets */,
+				FC67C3F219807585008B56AE /* license.txt */,
 				FCE51B3E195F236C0006C348 /* Supporting Files */,
 			);
 			path = TubeStatus;
@@ -340,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC67C3F319807585008B56AE /* license.txt in Resources */,
 				FCE51B4A195F236C0006C348 /* Main.storyboard in Resources */,
 				FCE51B4C195F236C0006C348 /* Images.xcassets in Resources */,
 				FC092A61195F4C46001BA2F6 /* LineTableViewCell.xib in Resources */,
@@ -375,6 +384,7 @@
 				FCE51B44195F236C0006C348 /* AppDelegate.m in Sources */,
 				FCE51B41195F236C0006C348 /* main.m in Sources */,
 				FCD0141B196087D8000FDBF0 /* DataModel.m in Sources */,
+				FC67C3F119806F3A008B56AE /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
