@@ -7,6 +7,7 @@
 //
 
 #import "XMLParserDelegate.h"
+#import "DataModel.h"
 
 @implementation XMLParserDelegate {
     NSMutableDictionary *lineColoursDict;
@@ -46,7 +47,7 @@
     cachedSettings = [NSMutableArray array];
     newCachedData = [NSMutableArray array];
     
-    NSArray *cachedData = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"] objectForKey:@"cachedData"];
+    NSArray *cachedData = [[DataModel getSettings] objectForKey:@"cachedData"];
     
     if (cachedData) {
         for (NSDictionary *line in cachedData) {
@@ -87,10 +88,8 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
     
-    NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"];
-    [userDefaults setObject:newCachedData forKey:@"cachedData"];
-    [userDefaults setObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"lastUpdated"];
-    [userDefaults synchronize];
+    [DataModel setSettingObject:newCachedData forKey:@"cachedData"];
+    [DataModel setSettingObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"lastUpdated"];
 }
 
 @end

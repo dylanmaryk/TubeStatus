@@ -22,11 +22,11 @@
         
         dataAvailable = [xmlParser parse];
     } else {
-        dataAvailable = [[[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"] objectForKey:@"cachedData"];
+        dataAvailable = [[DataModel getSettings] objectForKey:@"cachedData"];
     }
     
     if (dataAvailable) {
-        NSMutableArray *cachedData = [[[[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"] objectForKey:@"cachedData"] mutableCopy];
+        NSMutableArray *cachedData = [[[DataModel getSettings] objectForKey:@"cachedData"] mutableCopy];
         
         if (selectedLinesOnly) {
             NSMutableArray *cachedDataSelectedLinesOnly = [NSMutableArray array];
@@ -50,6 +50,15 @@
     } else {
         return nil;
     }
+}
+
++ (NSUserDefaults *)getSettings {
+    return [[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"];
+}
+
++ (void)setSettingObject:(id)object forKey:(NSString *)key {
+    [[self getSettings] setObject:object forKey:key];
+    [[self getSettings] synchronize];
 }
 
 @end

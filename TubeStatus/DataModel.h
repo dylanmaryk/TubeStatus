@@ -12,4 +12,8 @@
 
 + (NSMutableArray *)getDataForSelectedLinesOnly:(bool)selectedLinesOnly refreshedData:(bool)refreshedData;
 
++ (NSUserDefaults *)getSettings;
+
++ (void)setSettingObject:(id)object forKey:(NSString *)key;
+
 @end
