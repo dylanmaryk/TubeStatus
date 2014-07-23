@@ -103,12 +103,18 @@
     cachedData = [dataModel getDataWithSelectedLinesOnly:YES refreshedData:refreshedData];
     
     if (cachedData) {
-        CGRect tableFrame = todayLineTableView.frame;
-        
         CGFloat tableHeight = 0;
         
+        CGRect tableFrame = todayLineTableView.frame;
+        
+        NSMutableArray *totalWidgetHeights = [NSMutableArray array];
+        
         for (int i = 0; i < [todayLineTableView numberOfRowsInSection:0]; i++) {
-            tableHeight += [self tableView:todayLineTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            CGFloat cellHeightFloat = [self tableView:todayLineTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            
+            tableHeight += cellHeightFloat;
+            
+            [totalWidgetHeights addObject:[NSNumber numberWithFloat:tableFrame.origin.y + tableHeight]];
         }
         
         tableFrame.size.height = tableHeight;
@@ -120,7 +126,19 @@
         
         int preferredWidgetHeight = tableFrame.origin.y + tableHeight;
         
-        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, preferredWidgetHeight)]; // TODO: Set widget height to only show line statuses that fit.
+        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, preferredWidgetHeight)];
+        
+        if (preferredWidgetHeight > self.view.frame.size.height) {
+            NSArray *totalWidgetHeightsReversed = [[totalWidgetHeights reverseObjectEnumerator] allObjects];
+            
+            for (NSNumber *cellHeightNumber in totalWidgetHeightsReversed) {
+                if ([cellHeightNumber floatValue] < self.view.frame.size.height) {
+                    [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cellHeightNumber floatValue])];
+                    
+                    break;
+                }
+            }
+        }
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {
@@ -129,7 +147,7 @@
 }
 
 - (CGRect)lineStatusLabelFrameForRow:(NSInteger)row {
-    return [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:row] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}] boundingRectWithSize:CGSizeMake(todayLineTableView.frame.size.width - 8, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil]; // iPad hard-coded: "545"
+    return [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:row] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}] boundingRectWithSize:CGSizeMake(todayLineTableView.frame.size.width - 8, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil]; // Dynamic table width causes "bouncing" of widget height. iPad hard-coded: "545".
 }
 
 - (NSString *)lineStatusLabelTextForRow:(NSInteger)row {
