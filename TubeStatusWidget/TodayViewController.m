@@ -16,8 +16,6 @@
 @end
 
 @implementation TodayViewController {
-    DataModel *dataModel;
-    
     bool widgetNotUpdated;
     
     NSMutableArray *cachedData;
@@ -27,8 +25,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    dataModel = [[DataModel alloc] init];
     
     widgetNotUpdated = YES;
     
@@ -100,7 +96,7 @@
 }
 
 - (void)loadDataRefreshed:(bool)refreshedData {
-    cachedData = [dataModel getDataWithSelectedLinesOnly:YES refreshedData:refreshedData];
+    cachedData = [DataModel getDataForSelectedLinesOnly:YES refreshedData:refreshedData];
     
     if (cachedData) {
         CGFloat tableHeight = 0;

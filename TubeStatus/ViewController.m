@@ -14,8 +14,6 @@
 @end
 
 @implementation ViewController {
-    DataModel *dataModel;
-    
     NSMutableArray *cachedData;
 }
 
@@ -23,8 +21,6 @@
             
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    dataModel = [[DataModel alloc] init];
     
     [self loadDataRefreshed:NO tryLoadingRefreshedDataIfFails:YES];
 }
@@ -73,7 +69,7 @@
 }
 
 - (IBAction)settingSwitchTapped:(id)sender {
-    cachedData = [dataModel getDataWithSelectedLinesOnly:NO refreshedData:NO];
+    cachedData = [DataModel getDataForSelectedLinesOnly:NO refreshedData:NO];
     
     NSInteger settingTag = ((UISwitch *)sender).tag;
     
@@ -91,7 +87,7 @@
 }
 
 - (void)loadDataRefreshed:(bool)refreshedData tryLoadingRefreshedDataIfFails:(bool)tryLoadingRefreshedDataIfFails {
-    cachedData = [dataModel getDataWithSelectedLinesOnly:NO refreshedData:refreshedData];
+    cachedData = [DataModel getDataForSelectedLinesOnly:NO refreshedData:refreshedData];
     
     if (cachedData) {
         [lineTableView reloadData];

@@ -9,24 +9,14 @@
 #import "DataModel.h"
 #import "XMLParserDelegate.h"
 
-@implementation DataModel {
-    XMLParserDelegate *xmlParserDelegate;
-}
+@implementation DataModel
 
-- (id)init {
-    self = [super init];
-    
-    if (self) {
-        xmlParserDelegate = [[XMLParserDelegate alloc] init];
-    }
-    
-    return self;
-}
-
-- (NSMutableArray *)getDataWithSelectedLinesOnly:(bool)selectedLinesOnly refreshedData:(bool)refreshedData {
++ (NSMutableArray *)getDataForSelectedLinesOnly:(bool)selectedLinesOnly refreshedData:(bool)refreshedData {
     bool dataAvailable;
     
     if (refreshedData) {
+        XMLParserDelegate *xmlParserDelegate = [[XMLParserDelegate alloc] init];
+        
         NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://cloud.tfl.gov.uk/TrackerNet/LineStatus"]];
         [xmlParser setDelegate:xmlParserDelegate];
         
