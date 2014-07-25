@@ -17,13 +17,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <view hidden="YES" contentMode="scaleToFill" id="yVc-e8-TBU">
+                        <rect key="frame" x="20" y="0.0" width="300" height="1"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <view contentMode="scaleToFill" id="dvq-zg-96P">
+                        <rect key="frame" x="20" y="43" width="300" height="1"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
                     <view contentMode="scaleToFill" id="Vka-gM-Mq4">
                         <rect key="frame" x="0.0" y="0.0" width="20" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.054901960780000002" green="0.094117647060000004" blue="0.094117647060000004" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gHq-aT-NwE">
-                        <rect key="frame" x="28" y="11" width="215" height="21"/>
+                        <rect key="frame" x="28" y="10" width="215" height="23"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -42,6 +52,8 @@
                 <outlet property="lineColourView" destination="Vka-gM-Mq4" id="fUH-Kl-Hmw"/>
                 <outlet property="lineNameLabel" destination="gHq-aT-NwE" id="4qv-re-spC"/>
                 <outlet property="lineSettingSwitch" destination="xqg-b8-Chu" id="QIt-r7-CIp"/>
+                <outlet property="separatorViewBottom" destination="dvq-zg-96P" id="19B-re-UDR"/>
+                <outlet property="separatorViewTop" destination="yVc-e8-TBU" id="sKs-mF-Ege"/>
             </connections>
             <point key="canvasLocation" x="0.0" y="-1"/>
         </tableViewCell>

@@ -71,7 +71,7 @@
 }
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
-    if ([cachedSettings count]) {
+    if (cachedSettings.count) {
         int i = 0;
         
         for (NSNumber *setting in cachedSettings) {

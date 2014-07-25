@@ -10,6 +10,8 @@
 
 @interface LineTableViewCell : UITableViewCell
 
+@property (nonatomic, retain) IBOutlet UIView *separatorViewTop;
+@property (nonatomic, retain) IBOutlet UIView *separatorViewBottom;
 @property (nonatomic, retain) IBOutlet UIView *lineColourView;
 
 @property (nonatomic, retain) IBOutlet UILabel *lineNameLabel;

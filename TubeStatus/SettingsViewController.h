@@ -8,12 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-#import "FXForms.h"
-
-@interface SettingsViewController : UIViewController <FXFormControllerDelegate>
-
-@property (nonatomic, strong) FXFormController *settingsFormController;
-
-@property (nonatomic, strong) IBOutlet UITableView *settingsTableView;
+@interface SettingsViewController : UIViewController
 
 @end

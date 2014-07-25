@@ -26,7 +26,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [cachedData count];
+    return cachedData.count;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -49,11 +49,10 @@
     
     [cell setFrame:cellFrame];
     
-    if (indexPath.row > 0) {
-        UIView *separatorLineView = [[UIView alloc] initWithFrame:CGRectMake(cell.lineColourView.frame.size.width, 0, cellFrame.size.width - cell.lineColourView.frame.size.width, 1)];
-        [separatorLineView setBackgroundColor:[UIColor colorWithRed:239.0/255.0 green:239.0/255.0 blue:244.0/255.0 alpha:1]];
-        
-        [cell.contentView addSubview:separatorLineView];
+    if (indexPath.row == 0) {
+        [cell.separatorViewTop setHidden:NO];
+    } else {
+        [cell.separatorViewTop setHidden:YES];
     }
     
     NSData *lineColourData = [cachedData[indexPath.row] valueForKey:@"colour"];

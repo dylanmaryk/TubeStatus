@@ -66,13 +66,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="ETK-qS-Kc7">
-                                <rect key="frame" x="0.0" y="64" width="600" height="489"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="44" width="640" height="596"/>
-                                </variation>
-                            </tableView>
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8G-Ll-tnr">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <items>
@@ -82,19 +75,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ETK-qS-Kc7" firstAttribute="top" secondItem="Q8G-Ll-tnr" secondAttribute="bottom" id="5hd-8O-KRW"/>
                             <constraint firstItem="Q8G-Ll-tnr" firstAttribute="leading" secondItem="guO-nZ-SJd" secondAttribute="leading" id="8NQ-b7-fJS"/>
-                            <constraint firstAttribute="bottom" secondItem="ETK-qS-Kc7" secondAttribute="bottom" constant="47" id="AFG-Mt-5h5"/>
-                            <constraint firstItem="ETK-qS-Kc7" firstAttribute="leading" secondItem="guO-nZ-SJd" secondAttribute="leading" id="Tjg-xt-XWm"/>
-                            <constraint firstAttribute="trailing" secondItem="ETK-qS-Kc7" secondAttribute="trailing" id="ccg-Jg-7bh"/>
                             <constraint firstAttribute="trailing" secondItem="Q8G-Ll-tnr" secondAttribute="trailing" id="iXG-CN-baU"/>
                             <constraint firstItem="Q8G-Ll-tnr" firstAttribute="top" secondItem="ggV-zT-mMo" secondAttribute="bottom" id="p4I-Wr-o7O"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="settings" id="myb-Kv-E3i"/>
-                    <connections>
-                        <outlet property="settingsTableView" destination="ETK-qS-Kc7" id="hHL-MP-Dnl"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbU-Ut-Jii" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
