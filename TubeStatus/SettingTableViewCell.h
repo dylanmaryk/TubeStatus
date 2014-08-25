@@ -1,0 +1,17 @@
+//
+//  SettingTableViewCell.h
+//  TubeStatus
+//
+//  Created by Dylan Maryk on 25/08/2014.
+//  Copyright (c) 2014 Code Canopy. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface SettingTableViewCell : UITableViewCell
+
+@property (nonatomic, retain) IBOutlet UILabel *settingNameLabel;
+
+@property (nonatomic, retain) IBOutlet UISwitch *settingSettingSwitch;
+
+@end

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SettingsViewController : UIViewController
+#import "SettingTableViewCell.h"
+
+@interface SettingsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    IBOutlet SettingTableViewCell *settingTableViewCell;
+}
+
+@property (nonatomic, retain) IBOutlet UITableView *settingTableView;
+
+- (IBAction)settingSwitchTapped:(id)sender;
 
 @end

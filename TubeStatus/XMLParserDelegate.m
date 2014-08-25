@@ -47,7 +47,7 @@
     cachedSettings = [NSMutableArray array];
     newCachedData = [NSMutableArray array];
     
-    NSArray *cachedData = [[DataModel getSettings] objectForKey:@"cachedData"];
+    NSArray *cachedData = [[DataModel getUserDefaults] objectForKey:@"cachedData"];
     
     if (cachedData) {
         for (NSDictionary *line in cachedData) {
@@ -72,6 +72,8 @@
 
 - (void)parserDidEndDocument:(NSXMLParser *)parser {
     if (cachedSettings.count) {
+        // If lines added or removed, lines and settings become "out of sync".
+        
         int i = 0;
         
         for (NSNumber *setting in cachedSettings) {
@@ -88,8 +90,8 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
     
-    [DataModel setSettingObject:newCachedData forKey:@"cachedData"];
-    [DataModel setSettingObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"lastUpdated"];
+    [DataModel setUserDefaultsObject:newCachedData forKey:@"cachedData"];
+    [DataModel setUserDefaultsObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"lastUpdated"];
 }
 
 @end

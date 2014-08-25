@@ -11,9 +11,10 @@
 @interface DataModel : NSObject
 
 + (NSMutableArray *)getDataForSelectedLinesOnly:(bool)selectedLinesOnly refreshedData:(bool)refreshedData;
++ (NSMutableArray *)getSettings;
 
-+ (NSUserDefaults *)getSettings;
++ (NSUserDefaults *)getUserDefaults;
 
-+ (void)setSettingObject:(id)object forKey:(NSString *)key;
++ (void)setUserDefaultsObject:(id)object forKey:(NSString *)key;
 
 @end

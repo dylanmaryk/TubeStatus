@@ -22,11 +22,11 @@
         
         dataAvailable = [xmlParser parse];
     } else {
-        dataAvailable = [[DataModel getSettings] objectForKey:@"cachedData"];
+        dataAvailable = [[self getUserDefaults] objectForKey:@"cachedData"];
     }
     
     if (dataAvailable) {
-        NSMutableArray *cachedData = [[[DataModel getSettings] objectForKey:@"cachedData"] mutableCopy];
+        NSMutableArray *cachedData = [[[self getUserDefaults] objectForKey:@"cachedData"] mutableCopy];
         
         if (selectedLinesOnly) {
             NSMutableArray *cachedDataSelectedLinesOnly = [NSMutableArray array];
@@ -52,13 +52,47 @@
     }
 }
 
-+ (NSUserDefaults *)getSettings {
++ (NSMutableArray *)getSettings {
+    NSArray *daysOfWeek = [NSArray arrayWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", @"Sunday", nil];
+    
+    NSMutableArray *appSettings = [NSMutableArray array];
+    
+    for (NSString *dayOfWeek in daysOfWeek) {
+        [appSettings addObject:[NSDictionary dictionaryWithObjectsAndKeys:dayOfWeek, @"name", [self getCachedSettingByIdentifier:dayOfWeek onByDefault:NO], @"setting", nil]];
+    }
+    
+    return appSettings;
+}
+
++ (NSNumber *)getCachedSettingByIdentifier:(NSString *)settingIdentifier onByDefault:(bool)onByDefault {
+    NSMutableDictionary *cachedAppSettings = [[[self getUserDefaults] valueForKey:@"appSettings"] mutableCopy];
+    
+    if (!cachedAppSettings) {
+        [self setUserDefaultsObject:[NSDictionary dictionary] forKey:@"appSettings"];
+    }
+    
+    NSNumber *cachedAppSetting = [cachedAppSettings valueForKey:settingIdentifier];
+    
+    if (cachedAppSetting) {
+        return cachedAppSetting;
+    } else {
+        NSNumber *newCachedAppSetting = [NSNumber numberWithBool:onByDefault];
+        
+        [cachedAppSettings setValue:newCachedAppSetting forKey:settingIdentifier];
+        
+        [self setUserDefaultsObject:cachedAppSettings forKey:@"appSettings"];
+        
+        return newCachedAppSetting;
+    }
+}
+
++ (NSUserDefaults *)getUserDefaults {
     return [[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"];
 }
 
-+ (void)setSettingObject:(id)object forKey:(NSString *)key {
-    [[self getSettings] setObject:object forKey:key];
-    [[self getSettings] synchronize];
++ (void)setUserDefaultsObject:(id)object forKey:(NSString *)key {
+    [[self getUserDefaults] setObject:object forKey:key];
+    [[self getUserDefaults] synchronize];
 }
 
 @end
