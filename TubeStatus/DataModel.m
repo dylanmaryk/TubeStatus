@@ -52,13 +52,15 @@
     }
 }
 
-+ (NSMutableArray *)getSettings {
++ (NSArray *)getSettings {
     NSArray *daysOfWeek = [NSArray arrayWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", @"Sunday", nil];
     
     NSMutableArray *appSettings = [NSMutableArray array];
     
     for (NSString *dayOfWeek in daysOfWeek) {
-        [appSettings addObject:[NSDictionary dictionaryWithObjectsAndKeys:dayOfWeek, @"name", [self getCachedSettingByIdentifier:dayOfWeek onByDefault:NO], @"setting", nil]];
+        NSString *appSettingIdentifier = dayOfWeek.lowercaseString;
+        
+        [appSettings addObject:[NSDictionary dictionaryWithObjectsAndKeys:appSettingIdentifier, @"identifier", dayOfWeek, @"name", [self getCachedSettingByIdentifier:appSettingIdentifier onByDefault:NO], @"setting", nil]];
     }
     
     return appSettings;
@@ -68,7 +70,9 @@
     NSMutableDictionary *cachedAppSettings = [[[self getUserDefaults] valueForKey:@"appSettings"] mutableCopy];
     
     if (!cachedAppSettings) {
-        [self setUserDefaultsObject:[NSDictionary dictionary] forKey:@"appSettings"];
+        cachedAppSettings = [NSMutableDictionary dictionary];
+        
+        [self setUserDefaultsObject:cachedAppSettings forKey:@"appSettings"];
     }
     
     NSNumber *cachedAppSetting = [cachedAppSettings valueForKey:settingIdentifier];
@@ -84,6 +88,14 @@
         
         return newCachedAppSetting;
     }
+}
+
++ (void)setCachedSetting:(bool)settingValue forIdentifier:(NSString *)settingIdentifier {
+    NSMutableDictionary *cachedAppSettings = [[[self getUserDefaults] valueForKey:@"appSettings"] mutableCopy];
+    
+    [cachedAppSettings setValue:[NSNumber numberWithBool:settingValue] forKey:settingIdentifier];
+    
+    [self setUserDefaultsObject:cachedAppSettings forKey:@"appSettings"];
 }
 
 + (NSUserDefaults *)getUserDefaults {

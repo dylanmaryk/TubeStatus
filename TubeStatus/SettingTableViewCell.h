@@ -10,6 +10,11 @@
 
 @interface SettingTableViewCell : UITableViewCell
 
+@property (nonatomic, copy) NSString *settingIdentifier;
+
+@property (nonatomic, retain) IBOutlet UIView *separatorViewTop;
+@property (nonatomic, retain) IBOutlet UIView *separatorViewBottom;
+
 @property (nonatomic, retain) IBOutlet UILabel *settingNameLabel;
 
 @property (nonatomic, retain) IBOutlet UISwitch *settingSettingSwitch;

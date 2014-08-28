@@ -80,7 +80,7 @@
                             <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8G-Ll-tnr">
                                 <rect key="frame" x="0.0" y="20" width="600" height="74"/>
                                 <items>
-                                    <navigationItem title="Notifications" prompt="Select days to be notified of distruptions" id="w10-WF-Gvi"/>
+                                    <navigationItem title="Notifications" prompt="Select days to be notified of disruptions" id="w10-WF-Gvi"/>
                                 </items>
                             </navigationBar>
                         </subviews>

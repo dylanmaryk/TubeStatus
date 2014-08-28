@@ -14,7 +14,7 @@
 @end
 
 @implementation SettingsViewController {
-    NSMutableArray *appSettings;
+    NSArray *appSettings;
 }
 
 - (void)viewDidLoad {
@@ -46,6 +46,14 @@
     cellFrame.size.width = tableView.frame.size.width;
     
     [cell setFrame:cellFrame];
+    
+    if (indexPath.row == 0) {
+        [cell.separatorViewTop setHidden:NO];
+    } else {
+        [cell.separatorViewTop setHidden:YES];
+    }
+    
+    cell.settingIdentifier = [appSettings[indexPath.row] valueForKey:@"identifier"];
     [cell.settingNameLabel setText:[appSettings[indexPath.row] valueForKey:@"name"]];
     [cell.settingSettingSwitch setOn:[[appSettings[indexPath.row] valueForKey:@"setting"] boolValue]];
     
@@ -53,7 +61,11 @@
 }
 
 - (IBAction)settingSwitchTapped:(id)sender {
+    NSString *settingIdentifier = ((SettingTableViewCell *)((UISwitch *)sender).superview.superview).settingIdentifier;
     
+    bool settingOn = ((UISwitch *)sender).isOn;
+    
+    [DataModel setCachedSetting:settingOn forIdentifier:settingIdentifier];
 }
 
 @end
