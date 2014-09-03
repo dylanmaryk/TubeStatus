@@ -150,9 +150,13 @@
             }
         }
     } else {
+        CGRect labelFrame = lastUpdatedLabel.frame;
+        labelFrame.size.height = 42;
+        
+        [lastUpdatedLabel setFrame:labelFrame];
         [lastUpdatedLabel setText:@"Please select lines in the TubeStatus app to see their status."];
         
-        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, 33)];
+        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, 54)];
     }
 }
 
