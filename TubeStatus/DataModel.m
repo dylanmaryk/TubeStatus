@@ -8,6 +8,7 @@
 
 #import "DataModel.h"
 #import "XMLParserDelegate.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @implementation DataModel
 

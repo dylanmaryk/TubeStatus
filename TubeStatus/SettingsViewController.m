@@ -8,6 +8,7 @@
 
 #import "SettingsViewController.h"
 #import "DataModel.h"
+#import "DataModelAppOnly.h"
 
 @interface SettingsViewController ()
 
@@ -66,6 +67,8 @@
     bool settingOn = ((UISwitch *)sender).isOn;
     
     [DataModel setCachedSetting:settingOn forIdentifier:settingIdentifier];
+    
+    [DataModelAppOnly updateRemoteSettings];
 }
 
 @end
