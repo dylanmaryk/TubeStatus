@@ -9,12 +9,15 @@
 #import "ViewController.h"
 #import "DataModel.h"
 #import "DataModelAppOnly.h"
+#import "Reachability.h"
 
 @interface ViewController ()
 
 @end
 
 @implementation ViewController {
+    Reachability *reachability;
+    
     NSMutableArray *cachedData;
 }
 
@@ -23,7 +26,25 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    reachability = [Reachability reachabilityForInternetConnection];
+    [reachability startNotifier];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationWillEnterForeground:) name:UIApplicationWillEnterForegroundNotification object:nil];
+    
     [self loadDataRefreshed:NO tryLoadingRefreshedDataIfFails:YES];
+}
+
+- (void)applicationWillEnterForeground:(NSNotification *)notification {
+    [self loadDataRefreshed:NO tryLoadingRefreshedDataIfFails:YES];
+}
+
+- (void)reachabilityChanged:(NSNotification *)notification {
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    
+    if (networkStatus ==  ReachableViaWiFi || networkStatus == ReachableViaWWAN) {
+        [self loadDataRefreshed:NO tryLoadingRefreshedDataIfFails:YES];
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -96,7 +117,8 @@
     } else if (tryLoadingRefreshedDataIfFails) {
         [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:nil];
     } else {
-        // Handle no cached data.
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Internet Connection" message:@"Please connect to the Internet to use TubeStatus for the first time." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [alertView show];
     }
 }
 

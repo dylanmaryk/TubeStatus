@@ -11,6 +11,9 @@
 @interface DataModel : NSObject
 
 + (NSMutableArray *)getDataForSelectedLinesOnly:(bool)selectedLinesOnly refreshedData:(bool)refreshedData;
+
++ (bool)getRefreshedData;
+
 + (NSMutableArray *)getSettings;
 
 + (void)setCachedSetting:(bool)settingValue forIdentifier:(NSString *)settingIdentifier;

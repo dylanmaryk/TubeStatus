@@ -10,12 +10,15 @@
 
 #import "TodayViewController.h"
 #import "DataModel.h"
+#import "Reachability.h"
 
 @interface TodayViewController () <NCWidgetProviding>
 
 @end
 
 @implementation TodayViewController {
+    Reachability *reachability;
+    
     bool widgetNotUpdated;
     
     NSMutableArray *cachedData;
@@ -26,6 +29,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    reachability = [Reachability reachabilityForInternetConnection];
+    [reachability startNotifier];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    
     widgetNotUpdated = YES;
     
     [self loadDataRefreshed:NO];
@@ -35,6 +43,14 @@
     [super viewWillAppear:animated];
     
     if (widgetNotUpdated) {
+        [self loadDataRefreshed:YES];
+    }
+}
+
+- (void)reachabilityChanged:(NSNotification *)notification {
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    
+    if (networkStatus ==  ReachableViaWiFi || networkStatus == ReachableViaWWAN) {
         [self loadDataRefreshed:YES];
     }
 }
@@ -90,15 +106,13 @@
     
     widgetNotUpdated = NO;
     
-    // Handle completionHandler correctly.
-    
     completionHandler(NCUpdateResultNewData);
 }
 
 - (void)loadDataRefreshed:(bool)refreshedData {
     cachedData = [DataModel getDataForSelectedLinesOnly:YES refreshedData:refreshedData];
     
-    if (cachedData) {
+    if (cachedData.count) {
         CGFloat tableHeight = 0;
         
         CGRect tableFrame = todayLineTableView.frame;
@@ -135,15 +149,15 @@
                 }
             }
         }
-    } else if (refreshedData) {
-        [self loadDataRefreshed:NO];
     } else {
-        // Handle zero lines, whether due to none selected or no cached data (set preferred content size accordingly).
+        [lastUpdatedLabel setText:@"Please select lines in the TubeStatus app to see their status."];
+        
+        [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, 33)];
     }
 }
 
 - (CGRect)lineStatusLabelFrameForRow:(NSInteger)row {
-    return [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:row] attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:17]}] boundingRectWithSize:CGSizeMake(todayLineTableView.frame.size.width - 8, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil]; // Dynamic table width causes "bouncing" of widget height. iPad hard-coded: "545".
+    return [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:row] attributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:17] }] boundingRectWithSize:CGSizeMake(todayLineTableView.frame.size.width - 8, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil]; // Dynamic table width causes "bouncing" of widget height. iPad hard-coded: "545".
 }
 
 - (NSString *)lineStatusLabelTextForRow:(NSInteger)row {

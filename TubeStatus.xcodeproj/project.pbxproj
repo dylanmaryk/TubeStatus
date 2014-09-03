@@ -40,6 +40,8 @@
 		FCFC3BE219B6711000DE6BB4 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFC3BD819B6711000DE6BB4 /* AFURLResponseSerialization.m */; };
 		FCFC3BE319B6711000DE6BB4 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFC3BDA19B6711000DE6BB4 /* AFURLSessionManager.m */; };
 		FCFC3BE619B671B200DE6BB4 /* DataModelAppOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFC3BE519B671B200DE6BB4 /* DataModelAppOnly.m */; };
+		FCFC3BEC19B757E200DE6BB4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFC3BEB19B757E200DE6BB4 /* Reachability.m */; };
+		FCFC3BED19B757E200DE6BB4 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFC3BEB19B757E200DE6BB4 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +141,8 @@
 		FCFC3BDA19B6711000DE6BB4 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		FCFC3BE419B671B200DE6BB4 /* DataModelAppOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelAppOnly.h; sourceTree = "<group>"; };
 		FCFC3BE519B671B200DE6BB4 /* DataModelAppOnly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelAppOnly.m; sourceTree = "<group>"; };
+		FCFC3BEA19B757E200DE6BB4 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		FCFC3BEB19B757E200DE6BB4 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +214,8 @@
 				FCFC3BE519B671B200DE6BB4 /* DataModelAppOnly.m */,
 				FCE51B7A195F251B0006C348 /* XMLParserDelegate.h */,
 				FCE51B7B195F251B0006C348 /* XMLParserDelegate.m */,
+				FCFC3BEA19B757E200DE6BB4 /* Reachability.h */,
+				FCFC3BEB19B757E200DE6BB4 /* Reachability.m */,
 				FCE51B48195F236C0006C348 /* Main.storyboard */,
 				FCE51B4B195F236C0006C348 /* Images.xcassets */,
 				FC67C3F219807585008B56AE /* license.txt */,
@@ -464,6 +470,7 @@
 				FCFC3BE619B671B200DE6BB4 /* DataModelAppOnly.m in Sources */,
 				FCFC3BDD19B6711000DE6BB4 /* AFHTTPSessionManager.m in Sources */,
 				FC092A60195F4C46001BA2F6 /* LineTableViewCell.m in Sources */,
+				FCFC3BEC19B757E200DE6BB4 /* Reachability.m in Sources */,
 				FCE51B44195F236C0006C348 /* AppDelegate.m in Sources */,
 				FCE51B41195F236C0006C348 /* main.m in Sources */,
 				FCFC3BDF19B6711000DE6BB4 /* AFSecurityPolicy.m in Sources */,
@@ -491,6 +498,7 @@
 				FCD0142119608F59000FDBF0 /* DataModel.m in Sources */,
 				FCE51B6E195F237D0006C348 /* TodayViewController.m in Sources */,
 				FCD0141F19608C54000FDBF0 /* TodayLineTableViewCell.m in Sources */,
+				FCFC3BED19B757E200DE6BB4 /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

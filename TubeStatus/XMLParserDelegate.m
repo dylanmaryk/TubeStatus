@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Dylan Maryk. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 #import "XMLParserDelegate.h"
 #import "DataModel.h"
 

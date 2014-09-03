@@ -16,12 +16,7 @@
     bool dataAvailable;
     
     if (refreshedData) {
-        XMLParserDelegate *xmlParserDelegate = [[XMLParserDelegate alloc] init];
-        
-        NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://cloud.tfl.gov.uk/TrackerNet/LineStatus"]];
-        [xmlParser setDelegate:xmlParserDelegate];
-        
-        dataAvailable = [xmlParser parse];
+        dataAvailable = [self getRefreshedData];
     } else {
         dataAvailable = [[self getUserDefaults] objectForKey:@"cachedData"];
     }
@@ -51,6 +46,15 @@
     } else {
         return nil;
     }
+}
+
++ (bool)getRefreshedData {
+    XMLParserDelegate *xmlParserDelegate = [[XMLParserDelegate alloc] init];
+    
+    NSXMLParser *xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:[NSURL URLWithString:@"http://cloud.tfl.gov.uk/TrackerNet/LineStatus"]];
+    [xmlParser setDelegate:xmlParserDelegate];
+    
+    return [xmlParser parse];
 }
 
 + (NSArray *)getSettings {

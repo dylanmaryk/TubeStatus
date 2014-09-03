@@ -38,24 +38,6 @@
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-//    NSString *lineDescription = [userInfo valueForKey:@"description"];
-//    NSString *lineStatusDetails = [userInfo valueForKey:@"statusDetails"];
-//    NSString *lineStatus;
-//    
-//    if (lineStatusDetails) {
-//        lineStatus = [NSString stringWithFormat:@"%@: %@", lineDescription, lineStatusDetails];
-//    } else {
-//        lineStatus = [NSString stringWithFormat:@"%@", lineDescription];
-//    }
-//    
-//    UILocalNotification *statusUpdateNotification = [[UILocalNotification alloc] init];
-//    statusUpdateNotification.alertBody = [NSString stringWithFormat:@"%@ - %@", [userInfo valueForKey:@"line"], lineStatus];
-//    statusUpdateNotification.soundName = UILocalNotificationDefaultSoundName;
-//    
-//    [[UIApplication sharedApplication] presentLocalNotificationNow:statusUpdateNotification];
-//    
-//    completionHandler(UIBackgroundFetchResultNoData);
-    
     [DataModelAppOnly updateRemoteSettings];
     
     completionHandler(UIBackgroundFetchResultNewData);
@@ -71,6 +53,8 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     [DataModelAppOnly updateRemoteSettings];
+    
+    [DataModel getRefreshedData];
     
     completionHandler(UIBackgroundFetchResultNewData);
 }
