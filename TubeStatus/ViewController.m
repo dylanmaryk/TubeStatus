@@ -104,7 +104,7 @@
     
     // Refresh data using code below? May impact performance, but otherwise cached data not updated until viewDidLoad called again or widget displayed. Not refreshing data here results in cached data being "reset" to when viewDidLoad was called.
     
-    // [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:nil];
+    // [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:NO];
 }
 
 - (void)loadDataRefreshed:(bool)refreshedData tryLoadingRefreshedDataIfFails:(bool)tryLoadingRefreshedDataIfFails {
@@ -115,7 +115,7 @@
     } else if (refreshedData) {
         [self loadDataRefreshed:NO tryLoadingRefreshedDataIfFails:NO];
     } else if (tryLoadingRefreshedDataIfFails) {
-        [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:nil];
+        [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:NO];
     } else {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Internet Connection" message:@"Please connect to the Internet to use TubeStatus for the first time." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [alertView show];

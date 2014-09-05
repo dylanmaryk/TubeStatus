@@ -21,6 +21,10 @@
         
         NSString *linesPref = [linesSelected componentsJoinedByString:@", "];
         
+        if (!linesPref) {
+            linesPref = @"";
+        }
+        
         NSArray *daysOfWeek = [NSArray arrayWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", @"Sunday", nil];
         
         NSMutableArray *daysSelected = [NSMutableArray array];
@@ -34,6 +38,10 @@
         }
         
         NSString *daysPref = [daysSelected componentsJoinedByString:@", "];
+        
+        if (!daysPref) {
+            daysPref = @"";
+        }
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager POST:@"http://api.tubestatus.dylanmaryk.com/prefs" parameters:@{ @"devicetoken": deviceToken, @"linespref": linesPref, @"dayspref": daysPref } success:nil failure:nil];

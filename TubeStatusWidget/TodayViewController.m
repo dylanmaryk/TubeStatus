@@ -148,7 +148,11 @@
                     break;
                 }
             }
+            
+            [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(scrollTableViewDown) userInfo:nil repeats:NO];
         }
+    } else if (refreshedData) {
+        [self loadDataRefreshed:NO];
     } else {
         CGRect labelFrame = lastUpdatedLabel.frame;
         labelFrame.size.height = 42;
@@ -157,6 +161,30 @@
         [lastUpdatedLabel setText:@"Please select lines in the TubeStatus app to see their status."];
         
         [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, 54)];
+    }
+}
+
+- (void)scrollTableViewDown {
+    [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, todayLineTableView.contentOffset.y + 200) animated:YES];
+    
+    if (todayLineTableView.contentOffset.y <= todayLineTableView.contentSize.height - todayLineTableView.frame.size.height) {
+        [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(scrollTableViewDown) userInfo:nil repeats:NO];
+    } else {
+        [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, todayLineTableView.contentSize.height - todayLineTableView.frame.size.height) animated:YES];
+        
+        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(scrollTableViewUp) userInfo:nil repeats:NO];
+    }
+}
+
+- (void)scrollTableViewUp {
+    [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, todayLineTableView.contentOffset.y - 200) animated:YES];
+    
+    if (todayLineTableView.contentOffset.y >= 0) {
+        [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(scrollTableViewUp) userInfo:nil repeats:NO];
+    } else {
+        [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, 0) animated:YES];
+        
+        [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(scrollTableViewDown) userInfo:nil repeats:NO];
     }
 }
 
