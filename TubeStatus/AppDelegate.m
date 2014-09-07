@@ -31,7 +31,7 @@
     if (![deviceTokenString isEqualToString:[[DataModelAppOnly getUserDefaults] valueForKey:@"deviceToken"]]) {
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager POST:@"http://api.tubestatus.dylanmaryk.com/tokens" parameters:@{ @"devicetoken": deviceTokenString } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            [DataModelAppOnly setUserDefaultsObject:deviceTokenString forKey:@"deviceToken" andSync:NO];
+            [DataModelAppOnly setUserDefaultsObject:deviceTokenString forKey:@"deviceToken"];
         } failure:nil];
     }
 }

@@ -12,7 +12,7 @@
 @implementation DataModelAppOnly
 
 + (void)updateRemoteSettings {
-    NSString *deviceToken = [[DataModel getUserDefaults] valueForKey:@"deviceToken"];
+    NSString *deviceToken = [[self getUserDefaults] valueForKey:@"deviceToken"];
     
     if (deviceToken) {
         NSArray *cachedData = [self getDataForSelectedLinesOnly:YES refreshedData:NO];
@@ -28,7 +28,6 @@
         
         NSMutableArray *daysSelected = [NSMutableArray array];
         
-        for (NSDictionary *setting in [DataModel getSettings]) {
         for (NSDictionary *setting in [self getSettings]) {
             NSString *settingName = [setting valueForKey:@"name"];
             
