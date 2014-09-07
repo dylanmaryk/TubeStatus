@@ -92,8 +92,8 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"HH:mm"];
     
-    [DataModel setUserDefaultsObject:newCachedData forKey:@"cachedData"];
-    [DataModel setUserDefaultsObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"lastUpdated"];
+    [DataModel setUserDefaultsObject:newCachedData forKey:@"cachedData" andSync:YES];
+    [DataModel setUserDefaultsObject:[dateFormatter stringFromDate:[NSDate date]] forKey:@"lastUpdated" andSync:YES];
 }
 
 @end

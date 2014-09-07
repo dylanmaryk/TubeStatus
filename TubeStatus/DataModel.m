@@ -8,8 +8,11 @@
 
 #import "DataModel.h"
 #import "XMLParserDelegate.h"
+#import "SDCloudUserDefaults.h"
 
 @implementation DataModel
+
+static NSString *suiteName = @"group.com.dylanmaryk.TubeStatus";
 
 + (NSMutableArray *)getDataForSelectedLinesOnly:(bool)selectedLinesOnly refreshedData:(bool)refreshedData {
     bool dataAvailable;
@@ -76,7 +79,7 @@
     if (!cachedAppSettings) {
         cachedAppSettings = [NSMutableDictionary dictionary];
         
-        [self setUserDefaultsObject:cachedAppSettings forKey:@"appSettings"];
+        [self setUserDefaultsObject:cachedAppSettings forKey:@"appSettings" andSync:NO];
     }
     
     NSNumber *cachedAppSetting = [cachedAppSettings valueForKey:settingIdentifier];
@@ -95,16 +98,26 @@
     
     [cachedAppSettings setValue:[NSNumber numberWithBool:settingValue] forKey:settingIdentifier];
     
-    [self setUserDefaultsObject:cachedAppSettings forKey:@"appSettings"];
+    [self setUserDefaultsObject:cachedAppSettings forKey:@"appSettings" andSync:YES];
+}
+
++ (void)registerForSettingsSync {
+    [SDCloudUserDefaults setSuiteName:suiteName];
+    [SDCloudUserDefaults registerForNotifications];
 }
 
 + (NSUserDefaults *)getUserDefaults {
-    return [[NSUserDefaults alloc] initWithSuiteName:@"group.com.dylanmaryk.TubeStatus"];
+    return [[NSUserDefaults alloc] initWithSuiteName:suiteName];
 }
 
-+ (void)setUserDefaultsObject:(id)object forKey:(NSString *)key {
++ (void)setUserDefaultsObject:(id)object forKey:(NSString *)key andSync:(bool)syncObject {
     [[self getUserDefaults] setObject:object forKey:key];
     [[self getUserDefaults] synchronize];
+    
+    if (syncObject) {
+        [SDCloudUserDefaults setObject:object forKey:key];
+        [SDCloudUserDefaults synchronize];
+    }
 }
 
 @end

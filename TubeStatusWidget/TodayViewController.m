@@ -44,6 +44,8 @@
     widgetNotUpdated = YES;
     tableViewScrollingDown = YES;
     
+    [DataModel registerForSettingsSync];
+    
     [self loadDataRefreshed:NO];
 }
 

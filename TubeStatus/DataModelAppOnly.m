@@ -12,6 +12,8 @@
 @implementation DataModelAppOnly
 
 + (void)updateRemoteSettings {
+    [self registerForSettingsSync];
+    
     NSString *deviceToken = [[self getUserDefaults] valueForKey:@"deviceToken"];
     
     if (deviceToken) {

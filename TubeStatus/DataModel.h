@@ -17,9 +17,10 @@
 + (NSMutableArray *)getSettings;
 
 + (void)setCachedSetting:(bool)settingValue forIdentifier:(NSString *)settingIdentifier;
++ (void)registerForSettingsSync;
 
 + (NSUserDefaults *)getUserDefaults;
 
-+ (void)setUserDefaultsObject:(id)object forKey:(NSString *)key;
++ (void)setUserDefaultsObject:(id)object forKey:(NSString *)key andSync:(bool)syncObject;
 
 @end
