@@ -20,8 +20,11 @@
     Reachability *reachability;
     
     bool widgetNotUpdated;
+    bool tableViewScrollingDown;
     
     NSMutableArray *cachedData;
+    
+    NSTimer *scrollTableViewTimer;
 }
 
 @synthesize todayLineTableView, lastUpdatedLabel;
@@ -32,9 +35,14 @@
     reachability = [Reachability reachabilityForInternetConnection];
     [reachability startNotifier];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged:) name:kReachabilityChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged) name:kReachabilityChangedNotification object:nil];
+    
+    UITapGestureRecognizer *tableViewTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTableViewTap)];
+    
+    [todayLineTableView addGestureRecognizer:tableViewTapGestureRecognizer];
     
     widgetNotUpdated = YES;
+    tableViewScrollingDown = YES;
     
     [self loadDataRefreshed:NO];
 }
@@ -47,11 +55,23 @@
     }
 }
 
-- (void)reachabilityChanged:(NSNotification *)notification {
+- (void)reachabilityChanged {
     NetworkStatus networkStatus = [reachability currentReachabilityStatus];
     
     if (networkStatus ==  ReachableViaWiFi || networkStatus == ReachableViaWWAN) {
         [self loadDataRefreshed:YES];
+    }
+}
+
+- (void)handleTableViewTap {
+    if (scrollTableViewTimer.isValid) {
+        [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, todayLineTableView.contentOffset.y) animated:NO];
+        
+        [scrollTableViewTimer invalidate];
+    } else if (tableViewScrollingDown) {
+        [self scrollTableViewDown];
+    } else {
+        [self scrollTableViewUp];
     }
 }
 
@@ -165,24 +185,28 @@
 }
 
 - (void)scrollTableViewDown {
-    [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, todayLineTableView.contentOffset.y + 200) animated:YES];
+    [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, todayLineTableView.contentOffset.y + 50) animated:YES];
     
     if (todayLineTableView.contentOffset.y <= todayLineTableView.contentSize.height - todayLineTableView.frame.size.height) {
-        [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(scrollTableViewDown) userInfo:nil repeats:NO];
+        scrollTableViewTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(scrollTableViewDown) userInfo:nil repeats:NO];
     } else {
         [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, todayLineTableView.contentSize.height - todayLineTableView.frame.size.height) animated:YES];
+        
+        tableViewScrollingDown = NO;
         
         [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(scrollTableViewUp) userInfo:nil repeats:NO];
     }
 }
 
 - (void)scrollTableViewUp {
-    [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, todayLineTableView.contentOffset.y - 200) animated:YES];
+    [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, todayLineTableView.contentOffset.y - 50) animated:YES];
     
     if (todayLineTableView.contentOffset.y >= 0) {
-        [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(scrollTableViewUp) userInfo:nil repeats:NO];
+        scrollTableViewTimer = [NSTimer scheduledTimerWithTimeInterval:0.02 target:self selector:@selector(scrollTableViewUp) userInfo:nil repeats:NO];
     } else {
         [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, 0) animated:YES];
+        
+        tableViewScrollingDown = YES;
         
         [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(scrollTableViewDown) userInfo:nil repeats:NO];
     }
