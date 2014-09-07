@@ -8,7 +8,6 @@
 
 #import "DataModel.h"
 #import "XMLParserDelegate.h"
-#import "AFHTTPRequestOperationManager.h"
 
 @implementation DataModel
 
@@ -85,13 +84,9 @@
     if (cachedAppSetting) {
         return cachedAppSetting;
     } else {
-        NSNumber *newCachedAppSetting = [NSNumber numberWithBool:onByDefault];
+        [self setCachedSetting:onByDefault forIdentifier:settingIdentifier];
         
-        [cachedAppSettings setValue:newCachedAppSetting forKey:settingIdentifier];
-        
-        [self setUserDefaultsObject:cachedAppSettings forKey:@"appSettings"];
-        
-        return newCachedAppSetting;
+        return [NSNumber numberWithBool:onByDefault];
     }
 }
 

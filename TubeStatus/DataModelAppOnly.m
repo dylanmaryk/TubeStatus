@@ -7,7 +7,6 @@
 //
 
 #import "DataModelAppOnly.h"
-#import "DataModel.h"
 #import "AFHTTPRequestOperationManager.h"
 
 @implementation DataModelAppOnly
@@ -16,7 +15,7 @@
     NSString *deviceToken = [[DataModel getUserDefaults] valueForKey:@"deviceToken"];
     
     if (deviceToken) {
-        NSArray *cachedData = [DataModel getDataForSelectedLinesOnly:YES refreshedData:NO];
+        NSArray *cachedData = [self getDataForSelectedLinesOnly:YES refreshedData:NO];
         NSArray *linesSelected = [cachedData valueForKey:@"name"];
         
         NSString *linesPref = [linesSelected componentsJoinedByString:@", "];
@@ -30,6 +29,7 @@
         NSMutableArray *daysSelected = [NSMutableArray array];
         
         for (NSDictionary *setting in [DataModel getSettings]) {
+        for (NSDictionary *setting in [self getSettings]) {
             NSString *settingName = [setting valueForKey:@"name"];
             
             if ([daysOfWeek containsObject:settingName] && [[setting valueForKey:@"setting"] boolValue]) {

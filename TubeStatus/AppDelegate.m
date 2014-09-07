@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "DataModel.h"
 #import "DataModelAppOnly.h"
 #import "AFHTTPRequestOperationManager.h"
 
@@ -29,10 +28,10 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *deviceTokenString = [self deviceTokenStringFromData:deviceToken];
     
-    if (![deviceTokenString isEqualToString:[[DataModel getUserDefaults] valueForKey:@"deviceToken"]]) {
+    if (![deviceTokenString isEqualToString:[[DataModelAppOnly getUserDefaults] valueForKey:@"deviceToken"]]) {
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
         [manager POST:@"http://api.tubestatus.dylanmaryk.com/tokens" parameters:@{ @"devicetoken": deviceTokenString } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            [DataModel setUserDefaultsObject:deviceTokenString forKey:@"deviceToken"];
+            [DataModelAppOnly setUserDefaultsObject:deviceTokenString forKey:@"deviceToken" andSync:NO];
         } failure:nil];
     }
 }
@@ -53,8 +52,7 @@
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
     [DataModelAppOnly updateRemoteSettings];
-    
-    [DataModel getRefreshedData];
+    [DataModelAppOnly getRefreshedData];
     
     completionHandler(UIBackgroundFetchResultNewData);
 }

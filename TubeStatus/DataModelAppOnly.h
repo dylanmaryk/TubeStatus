@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DataModelAppOnly : NSObject
+#import "DataModel.h"
+
+@interface DataModelAppOnly : DataModel
 
 + (void)updateRemoteSettings;
 
