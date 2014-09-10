@@ -14,8 +14,6 @@
     IBOutlet SettingTableViewCell *settingTableViewCell;
 }
 
-@property (nonatomic, retain) IBOutlet UITableView *settingTableView;
-
 - (IBAction)settingSwitchTapped:(id)sender;
 
 @end
