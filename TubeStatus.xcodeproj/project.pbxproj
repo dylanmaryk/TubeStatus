@@ -10,7 +10,6 @@
 		FC092A60195F4C46001BA2F6 /* LineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC092A5E195F4C46001BA2F6 /* LineTableViewCell.m */; };
 		FC092A61195F4C46001BA2F6 /* LineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC092A5F195F4C46001BA2F6 /* LineTableViewCell.xib */; };
 		FC67C3F119806F3A008B56AE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC67C3F019806F3A008B56AE /* SettingsViewController.m */; };
-		FC67C3F319807585008B56AE /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = FC67C3F219807585008B56AE /* license.txt */; };
 		FC82B04419BE33DF009CACEB /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03219BE33DF009CACEB /* AFHTTPRequestOperation.m */; };
 		FC82B04519BE33DF009CACEB /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03419BE33DF009CACEB /* AFHTTPRequestOperationManager.m */; };
 		FC82B04619BE33DF009CACEB /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03619BE33DF009CACEB /* AFHTTPSessionManager.m */; };
@@ -89,7 +88,6 @@
 		FC092A5F195F4C46001BA2F6 /* LineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineTableViewCell.xib; sourceTree = "<group>"; };
 		FC67C3EF19806F3A008B56AE /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FC67C3F019806F3A008B56AE /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		FC67C3F219807585008B56AE /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		FC82B03119BE33DF009CACEB /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		FC82B03219BE33DF009CACEB /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		FC82B03319BE33DF009CACEB /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -267,7 +265,6 @@
 				FCE51B7B195F251B0006C348 /* XMLParserDelegate.m */,
 				FCE51B48195F236C0006C348 /* Main.storyboard */,
 				FCE51B4B195F236C0006C348 /* Images.xcassets */,
-				FC67C3F219807585008B56AE /* license.txt */,
 				FCE51B3E195F236C0006C348 /* Supporting Files */,
 			);
 			path = TubeStatus;
@@ -453,7 +450,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC67C3F319807585008B56AE /* license.txt in Resources */,
 				FCE51B4A195F236C0006C348 /* Main.storyboard in Resources */,
 				FCE51B4C195F236C0006C348 /* Images.xcassets in Resources */,
 				FC9A0DD119AB5A79008DE646 /* SettingTableViewCell.xib in Resources */,
