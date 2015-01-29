@@ -19,7 +19,6 @@
 @implementation TodayViewController {
     Reachability *reachability;
     
-    bool widgetNotUpdated;
     bool tableViewScrollingDown;
     
     NSMutableArray *cachedData;
@@ -41,20 +40,11 @@
     
     [todayLineTableView addGestureRecognizer:tableViewTapGestureRecognizer];
     
-    widgetNotUpdated = YES;
     tableViewScrollingDown = YES;
     
     [DataModel registerForSettingsSync];
     
     [self loadDataRefreshed:NO];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    if (widgetNotUpdated) {
-        [self loadDataRefreshed:YES];
-    }
 }
 
 - (void)reachabilityChanged {
@@ -125,8 +115,6 @@
 
 - (void)widgetPerformUpdateWithCompletionHandler:(void (^)(NCUpdateResult))completionHandler {
     [self loadDataRefreshed:YES];
-    
-    widgetNotUpdated = NO;
     
     completionHandler(NCUpdateResultNewData);
 }
