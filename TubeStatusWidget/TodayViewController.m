@@ -217,4 +217,8 @@
     }
 }
 
+- (UIEdgeInsets)widgetMarginInsetsForProposedMarginInsets:(UIEdgeInsets)defaultMarginInsets {
+    return UIEdgeInsetsZero;
+}
+
 @end

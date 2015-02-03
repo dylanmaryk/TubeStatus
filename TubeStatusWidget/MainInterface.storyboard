@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="M4Y-Lb-cyx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Today View Controller-->
@@ -25,7 +25,7 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SAr-Og-mEV">
-                                <rect key="frame" x="0.0" y="5" width="320" height="21"/>
+                                <rect key="frame" x="8" y="5" width="312" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -33,7 +33,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstItem="mwe-pq-vIl" firstAttribute="top" secondItem="SAr-Og-mEV" secondAttribute="bottom" constant="7" id="1iY-au-pTO"/>
-                            <constraint firstItem="SAr-Og-mEV" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="JsZ-XU-m0C"/>
+                            <constraint firstItem="SAr-Og-mEV" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="8" id="JsZ-XU-m0C"/>
                             <constraint firstAttribute="trailing" secondItem="SAr-Og-mEV" secondAttribute="trailing" id="XAW-Sx-nmk"/>
                             <constraint firstAttribute="trailing" secondItem="mwe-pq-vIl" secondAttribute="trailing" id="eRR-nm-u13"/>
                             <constraint firstItem="mwe-pq-vIl" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="krP-M9-stf"/>
@@ -60,9 +60,6 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4">
-            <size key="portraitSize" width="320" height="568"/>
-            <size key="landscapeSize" width="568" height="320"/>
-        </simulatedScreenMetrics>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
 </document>
