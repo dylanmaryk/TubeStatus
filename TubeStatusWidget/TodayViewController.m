@@ -203,7 +203,7 @@
 }
 
 - (CGRect)lineStatusLabelFrameForRow:(NSInteger)row {
-    return [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:row] attributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:17] }] boundingRectWithSize:CGSizeMake(todayLineTableView.frame.size.width - 8, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil]; // Dynamic table width causes "bouncing" of widget height. iPad hard-coded: "545".
+    return [[[NSAttributedString alloc] initWithString:[self lineStatusLabelTextForRow:row] attributes:@{ NSFontAttributeName:[UIFont systemFontOfSize:17] }] boundingRectWithSize:CGSizeMake(todayLineTableView.frame.size.width - 24, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin context:nil]; // Dynamic table width causes "bouncing" of widget height. iPad hard-coded: "545".
 }
 
 - (NSString *)lineStatusLabelTextForRow:(NSInteger)row {
