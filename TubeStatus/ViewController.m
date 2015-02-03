@@ -114,8 +114,7 @@
     } else if (tryLoadingRefreshedDataIfFails) {
         [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:NO];
     } else {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"No Internet Connection" message:@"Please connect to the Internet to use TubeStatus for the first time." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alertView show];
+        [[[UIAlertView alloc] initWithTitle:@"No Internet Connection" message:@"Please connect to the Internet to use TubeStatus for the first time." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
     }
 }
 
