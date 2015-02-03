@@ -29,10 +29,7 @@
     NSString *deviceTokenString = [self deviceTokenStringFromData:deviceToken];
     
     if (![deviceTokenString isEqualToString:[[DataModelAppOnly getUserDefaults] valueForKey:@"deviceToken"]]) {
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager POST:@"http://api.tubestatus.dylanmaryk.com:8081/tokens" parameters:@{ @"devicetoken": deviceTokenString } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            [DataModelAppOnly setUserDefaultsObject:deviceTokenString forKey:@"deviceToken" andSync:YES];
-        } failure:nil];
+        [DataModelAppOnly setUserDefaultsObject:deviceTokenString forKey:@"deviceToken" andSync:NO];
     }
 }
 

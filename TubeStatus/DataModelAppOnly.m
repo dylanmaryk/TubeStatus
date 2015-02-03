@@ -45,7 +45,7 @@
         }
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager POST:@"http://api.tubestatus.dylanmaryk.com:8081/prefs" parameters:@{ @"devicetoken": deviceToken, @"linespref": linesPref, @"dayspref": daysPref } success:nil failure:nil];
+        [manager POST:@"http://api.tubestatus.dylanmaryk.com:8081/prefs" parameters:@{ @"devicetoken":deviceToken, @"linespref":linesPref, @"dayspref":daysPref } success:nil failure:nil];
     }
 }
 
