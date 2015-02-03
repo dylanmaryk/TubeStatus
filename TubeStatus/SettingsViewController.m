@@ -66,7 +66,6 @@
     bool settingOn = ((UISwitch *)sender).isOn;
     
     [DataModel setCachedSetting:settingOn forIdentifier:settingIdentifier];
-    [DataModel updateRemoteSettings];
 }
 
 @end
