@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "DataModelAppOnly.h"
+#import "DataModel.h"
 #import "Reachability.h"
 
 @interface ViewController ()
@@ -89,7 +89,7 @@
 }
 
 - (IBAction)settingSwitchTapped:(id)sender {
-    cachedData = [DataModelAppOnly getDataForSelectedLinesOnly:NO refreshedData:NO];
+    cachedData = [DataModel getDataForSelectedLinesOnly:NO refreshedData:NO];
     
     NSInteger settingTag = ((UISwitch *)sender).tag;
     
@@ -97,8 +97,8 @@
     
     [cachedData[settingTag] setValue:[NSNumber numberWithBool:settingOn] forKey:@"setting"];
     
-    [DataModelAppOnly setUserDefaultsObject:cachedData forKey:@"cachedData" andSync:YES];
-    [DataModelAppOnly updateRemoteSettings];
+    [DataModel setUserDefaultsObject:cachedData forKey:@"cachedData" andSync:YES];
+    [DataModel updateRemoteSettings];
     
     // Refresh data using code below? May impact performance, but otherwise cached data not updated until viewDidLoad called again or widget displayed. Not refreshing data here results in cached data being "reset" to when viewDidLoad was called.
     
@@ -106,7 +106,7 @@
 }
 
 - (void)loadDataRefreshed:(bool)refreshedData tryLoadingRefreshedDataIfFails:(bool)tryLoadingRefreshedDataIfFails {
-    cachedData = [DataModelAppOnly getDataForSelectedLinesOnly:NO refreshedData:refreshedData];
+    cachedData = [DataModel getDataForSelectedLinesOnly:NO refreshedData:refreshedData];
     
     if (cachedData) {
         [lineTableView reloadData];

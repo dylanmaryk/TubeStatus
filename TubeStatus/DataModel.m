@@ -8,6 +8,7 @@
 
 #import "DataModel.h"
 #import "XMLParserDelegate.h"
+#import "AFHTTPRequestOperationManager.h"
 #import "SDCloudUserDefaults.h"
 
 @implementation DataModel
@@ -99,6 +100,44 @@ static NSString *suiteName = @"group.com.dylanmaryk.TubeStatus";
     [cachedAppSettings setValue:[NSNumber numberWithBool:settingValue] forKey:settingIdentifier];
     
     [self setUserDefaultsObject:cachedAppSettings forKey:@"appSettings" andSync:YES];
+}
+
++ (void)updateRemoteSettings {
+    [self registerForSettingsSync];
+    
+    NSString *deviceToken = [[self getUserDefaults] valueForKey:@"deviceToken"];
+    
+    if (deviceToken) {
+        NSArray *cachedData = [self getDataForSelectedLinesOnly:YES refreshedData:NO];
+        NSArray *linesSelected = [cachedData valueForKey:@"name"];
+        
+        NSString *linesPref = [linesSelected componentsJoinedByString:@", "];
+        
+        if (!linesPref) {
+            linesPref = @"";
+        }
+        
+        NSArray *daysOfWeek = [NSArray arrayWithObjects:@"Monday", @"Tuesday", @"Wednesday", @"Thursday", @"Friday", @"Saturday", @"Sunday", nil];
+        
+        NSMutableArray *daysSelected = [NSMutableArray array];
+        
+        for (NSDictionary *setting in [self getSettings]) {
+            NSString *settingName = [setting valueForKey:@"name"];
+            
+            if ([daysOfWeek containsObject:settingName] && [[setting valueForKey:@"setting"] boolValue]) {
+                [daysSelected addObject:settingName];
+            }
+        }
+        
+        NSString *daysPref = [daysSelected componentsJoinedByString:@", "];
+        
+        if (!daysPref) {
+            daysPref = @"";
+        }
+        
+        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        [manager POST:@"http://api.tubestatus.dylanmaryk.com:8081/prefs" parameters:@{ @"devicetoken":deviceToken, @"linespref":linesPref, @"dayspref":daysPref } success:nil failure:nil];
+    }
 }
 
 + (void)registerForSettingsSync {

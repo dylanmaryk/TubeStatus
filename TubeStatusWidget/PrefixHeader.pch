@@ -1,0 +1,14 @@
+//
+//  PrefixHeader.pch
+//  TubeStatus
+//
+//  Created by Dylan Maryk on 03/02/2015.
+//  Copyright (c) 2015 Code Canopy. All rights reserved.
+//
+
+#ifndef TubeStatus_PrefixHeader_pch
+#define TubeStatus_PrefixHeader_pch
+
+#define AF_APP_EXTENSIONS
+
+#endif

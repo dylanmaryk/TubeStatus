@@ -25,6 +25,15 @@
 		FC82B05619BE3403009CACEB /* SDCloudUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B05219BE3403009CACEB /* SDCloudUserDefaults.m */; };
 		FC9A0DD019AB5A79008DE646 /* SettingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9A0DCE19AB5A79008DE646 /* SettingTableViewCell.m */; };
 		FC9A0DD119AB5A79008DE646 /* SettingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9A0DCF19AB5A79008DE646 /* SettingTableViewCell.xib */; };
+		FC9B83BC1A80FBEC00566F76 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03219BE33DF009CACEB /* AFHTTPRequestOperation.m */; };
+		FC9B83BE1A80FBEC00566F76 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03419BE33DF009CACEB /* AFHTTPRequestOperationManager.m */; };
+		FC9B83C01A80FBEC00566F76 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03619BE33DF009CACEB /* AFHTTPSessionManager.m */; };
+		FC9B83C31A80FBEC00566F76 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03919BE33DF009CACEB /* AFNetworkReachabilityManager.m */; };
+		FC9B83C51A80FBEC00566F76 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03B19BE33DF009CACEB /* AFSecurityPolicy.m */; };
+		FC9B83C71A80FBEC00566F76 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03D19BE33DF009CACEB /* AFURLConnectionOperation.m */; };
+		FC9B83C91A80FBEC00566F76 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03F19BE33DF009CACEB /* AFURLRequestSerialization.m */; };
+		FC9B83CB1A80FBEC00566F76 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04119BE33DF009CACEB /* AFURLResponseSerialization.m */; };
+		FC9B83CD1A80FBEC00566F76 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04319BE33DF009CACEB /* AFURLSessionManager.m */; };
 		FCD0141B196087D8000FDBF0 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0141A196087D8000FDBF0 /* DataModel.m */; };
 		FCD0141F19608C54000FDBF0 /* TodayLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0141D19608C54000FDBF0 /* TodayLineTableViewCell.m */; };
 		FCD0142019608C54000FDBF0 /* TodayLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD0141E19608C54000FDBF0 /* TodayLineTableViewCell.xib */; };
@@ -41,7 +50,6 @@
 		FCE51B70195F237D0006C348 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCE51B6F195F237D0006C348 /* MainInterface.storyboard */; };
 		FCE51B73195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCE51B65195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex */; };
 		FCE51B7C195F251B0006C348 /* XMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE51B7B195F251B0006C348 /* XMLParserDelegate.m */; };
-		FCFC3BE619B671B200DE6BB4 /* DataModelAppOnly.m in Sources */ = {isa = PBXBuildFile; fileRef = FCFC3BE519B671B200DE6BB4 /* DataModelAppOnly.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +122,7 @@
 		FC9A0DCD19AB5A79008DE646 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
 		FC9A0DCE19AB5A79008DE646 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
 		FC9A0DCF19AB5A79008DE646 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
+		FC9B83BA1A80FAF100566F76 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FCD01419196087D8000FDBF0 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		FCD0141A196087D8000FDBF0 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		FCD0141C19608C54000FDBF0 /* TodayLineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayLineTableViewCell.h; sourceTree = "<group>"; };
@@ -141,8 +150,6 @@
 		FCE51B6F195F237D0006C348 /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
 		FCE51B7A195F251B0006C348 /* XMLParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLParserDelegate.h; sourceTree = "<group>"; };
 		FCE51B7B195F251B0006C348 /* XMLParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLParserDelegate.m; sourceTree = "<group>"; };
-		FCFC3BE419B671B200DE6BB4 /* DataModelAppOnly.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelAppOnly.h; sourceTree = "<group>"; };
-		FCFC3BE519B671B200DE6BB4 /* DataModelAppOnly.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelAppOnly.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,8 +266,6 @@
 				FC9A0DCF19AB5A79008DE646 /* SettingTableViewCell.xib */,
 				FCD01419196087D8000FDBF0 /* DataModel.h */,
 				FCD0141A196087D8000FDBF0 /* DataModel.m */,
-				FCFC3BE419B671B200DE6BB4 /* DataModelAppOnly.h */,
-				FCFC3BE519B671B200DE6BB4 /* DataModelAppOnly.m */,
 				FCE51B7A195F251B0006C348 /* XMLParserDelegate.h */,
 				FCE51B7B195F251B0006C348 /* XMLParserDelegate.m */,
 				FCE51B48195F236C0006C348 /* Main.storyboard */,
@@ -322,6 +327,7 @@
 		FCE51B6A195F237D0006C348 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FC9B83BA1A80FAF100566F76 /* PrefixHeader.pch */,
 				FCE51B6B195F237D0006C348 /* Info.plist */,
 				FCD9DB55197488D600B0D191 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.entitlements */,
 			);
@@ -491,7 +497,6 @@
 				FC9A0DD019AB5A79008DE646 /* SettingTableViewCell.m in Sources */,
 				FC82B04C19BE33DF009CACEB /* AFURLSessionManager.m in Sources */,
 				FC82B05319BE3403009CACEB /* Reachability.m in Sources */,
-				FCFC3BE619B671B200DE6BB4 /* DataModelAppOnly.m in Sources */,
 				FC82B04519BE33DF009CACEB /* AFHTTPRequestOperationManager.m in Sources */,
 				FC092A60195F4C46001BA2F6 /* LineTableViewCell.m in Sources */,
 				FC82B04B19BE33DF009CACEB /* AFURLResponseSerialization.m in Sources */,
@@ -515,6 +520,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9B83BC1A80FBEC00566F76 /* AFHTTPRequestOperation.m in Sources */,
+				FC9B83BE1A80FBEC00566F76 /* AFHTTPRequestOperationManager.m in Sources */,
+				FC9B83C01A80FBEC00566F76 /* AFHTTPSessionManager.m in Sources */,
+				FC9B83C31A80FBEC00566F76 /* AFNetworkReachabilityManager.m in Sources */,
+				FC9B83C51A80FBEC00566F76 /* AFSecurityPolicy.m in Sources */,
+				FC9B83C71A80FBEC00566F76 /* AFURLConnectionOperation.m in Sources */,
+				FC9B83C91A80FBEC00566F76 /* AFURLRequestSerialization.m in Sources */,
+				FC9B83CB1A80FBEC00566F76 /* AFURLResponseSerialization.m in Sources */,
+				FC9B83CD1A80FBEC00566F76 /* AFURLSessionManager.m in Sources */,
 				FCD0142219608F6F000FDBF0 /* XMLParserDelegate.m in Sources */,
 				FC82B05619BE3403009CACEB /* SDCloudUserDefaults.m in Sources */,
 				FCD0142119608F59000FDBF0 /* DataModel.m in Sources */,
@@ -706,6 +720,8 @@
 				CODE_SIGN_ENTITLEMENTS = TubeStatusWidget/com.dylanmaryk.TubeStatus.TubeStatusWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dylan Maryk (A2MH8YVLP9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dylan Maryk (A2MH8YVLP9)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TubeStatusWidget/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -727,6 +743,8 @@
 				CODE_SIGN_ENTITLEMENTS = TubeStatusWidget/com.dylanmaryk.TubeStatus.TubeStatusWidget.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Dylan Maryk (A2MH8YVLP9)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dylan Maryk (A2MH8YVLP9)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = TubeStatusWidget/PrefixHeader.pch;
 				INFOPLIST_FILE = TubeStatusWidget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";

@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "DataModelAppOnly.h"
+#import "DataModel.h"
 #import "AFHTTPRequestOperationManager.h"
 
 @interface AppDelegate ()
@@ -20,7 +20,7 @@
     [[UIApplication sharedApplication] registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeSound categories:nil]];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
     
-    [DataModelAppOnly updateRemoteSettings];
+    [DataModel updateRemoteSettings];
     
     return YES;
 }
@@ -28,28 +28,28 @@
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     NSString *deviceTokenString = [self deviceTokenStringFromData:deviceToken];
     
-    if (![deviceTokenString isEqualToString:[[DataModelAppOnly getUserDefaults] valueForKey:@"deviceToken"]]) {
-        [DataModelAppOnly setUserDefaultsObject:deviceTokenString forKey:@"deviceToken" andSync:NO];
+    if (![deviceTokenString isEqualToString:[[DataModel getUserDefaults] valueForKey:@"deviceToken"]]) {
+        [DataModel setUserDefaultsObject:deviceTokenString forKey:@"deviceToken" andSync:NO];
     }
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    [DataModelAppOnly updateRemoteSettings];
+    [DataModel updateRemoteSettings];
     
     completionHandler(UIBackgroundFetchResultNewData);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [DataModelAppOnly updateRemoteSettings];
+    [DataModel updateRemoteSettings];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    [DataModelAppOnly updateRemoteSettings];
+    [DataModel updateRemoteSettings];
 }
 
 - (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    [DataModelAppOnly updateRemoteSettings];
-    [DataModelAppOnly getRefreshedData];
+    [DataModel updateRemoteSettings];
+    [DataModel getRefreshedData];
     
     completionHandler(UIBackgroundFetchResultNewData);
 }

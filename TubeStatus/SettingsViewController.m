@@ -7,7 +7,7 @@
 //
 
 #import "SettingsViewController.h"
-#import "DataModelAppOnly.h"
+#import "DataModel.h"
 
 @interface SettingsViewController ()
 
@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    appSettings = [DataModelAppOnly getSettings];
+    appSettings = [DataModel getSettings];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -65,8 +65,8 @@
     
     bool settingOn = ((UISwitch *)sender).isOn;
     
-    [DataModelAppOnly setCachedSetting:settingOn forIdentifier:settingIdentifier];
-    [DataModelAppOnly updateRemoteSettings];
+    [DataModel setCachedSetting:settingOn forIdentifier:settingIdentifier];
+    [DataModel updateRemoteSettings];
 }
 
 @end

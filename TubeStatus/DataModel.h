@@ -17,6 +17,7 @@
 + (NSMutableArray *)getSettings;
 
 + (void)setCachedSetting:(bool)settingValue forIdentifier:(NSString *)settingIdentifier;
++ (void)updateRemoteSettings;
 + (void)registerForSettingsSync;
 
 + (NSUserDefaults *)getUserDefaults;
