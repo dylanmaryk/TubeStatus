@@ -34,6 +34,26 @@
 		FC9B83C91A80FBEC00566F76 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03F19BE33DF009CACEB /* AFURLRequestSerialization.m */; };
 		FC9B83CB1A80FBEC00566F76 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04119BE33DF009CACEB /* AFURLResponseSerialization.m */; };
 		FC9B83CD1A80FBEC00566F76 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04319BE33DF009CACEB /* AFURLSessionManager.m */; };
+		FCA3CAC11A883575003F3F4E /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA3CAC01A883575003F3F4E /* InterfaceController.m */; };
+		FCA3CAC31A883575003F3F4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CAC21A883575003F3F4E /* Images.xcassets */; };
+		FCA3CAC71A883576003F3F4E /* TubeStatus WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CAC61A883575003F3F4E /* TubeStatus WatchKit App.app */; };
+		FCA3CACF1A883576003F3F4E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CACD1A883576003F3F4E /* Interface.storyboard */; };
+		FCA3CAD11A883576003F3F4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CAD01A883576003F3F4E /* Images.xcassets */; };
+		FCA3CAD41A883576003F3F4E /* TubeStatus WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCA3CABB1A883575003F3F4E /* TubeStatus WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FCA3CAEB1A8843E5003F3F4E /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0141A196087D8000FDBF0 /* DataModel.m */; };
+		FCA3CAEC1A88440D003F3F4E /* XMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE51B7B195F251B0006C348 /* XMLParserDelegate.m */; };
+		FCA3CAED1A88440D003F3F4E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03219BE33DF009CACEB /* AFHTTPRequestOperation.m */; };
+		FCA3CAEE1A88440D003F3F4E /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03419BE33DF009CACEB /* AFHTTPRequestOperationManager.m */; };
+		FCA3CAEF1A88440D003F3F4E /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03619BE33DF009CACEB /* AFHTTPSessionManager.m */; };
+		FCA3CAF01A88440D003F3F4E /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03919BE33DF009CACEB /* AFNetworkReachabilityManager.m */; };
+		FCA3CAF11A88440D003F3F4E /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03B19BE33DF009CACEB /* AFSecurityPolicy.m */; };
+		FCA3CAF21A88440D003F3F4E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03D19BE33DF009CACEB /* AFURLConnectionOperation.m */; };
+		FCA3CAF31A88440D003F3F4E /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03F19BE33DF009CACEB /* AFURLRequestSerialization.m */; };
+		FCA3CAF41A88440D003F3F4E /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04119BE33DF009CACEB /* AFURLResponseSerialization.m */; };
+		FCA3CAF51A88440D003F3F4E /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04319BE33DF009CACEB /* AFURLSessionManager.m */; };
+		FCA3CAF61A884474003F3F4E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04F19BE3403009CACEB /* Reachability.m */; };
+		FCA3CAF71A88447D003F3F4E /* SDCloudUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B05219BE3403009CACEB /* SDCloudUserDefaults.m */; };
+		FCA3CAFB1A884C10003F3F4E /* LineRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA3CAFA1A884C10003F3F4E /* LineRowController.m */; };
 		FCD0141B196087D8000FDBF0 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0141A196087D8000FDBF0 /* DataModel.m */; };
 		FCD0141F19608C54000FDBF0 /* TodayLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0141D19608C54000FDBF0 /* TodayLineTableViewCell.m */; };
 		FCD0142019608C54000FDBF0 /* TodayLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD0141E19608C54000FDBF0 /* TodayLineTableViewCell.xib */; };
@@ -53,6 +73,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FCA3CAC81A883576003F3F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCE51B33195F236C0006C348 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCA3CAC51A883575003F3F4E;
+			remoteInfo = "TubeStatus WatchKit App";
+		};
+		FCA3CAD21A883576003F3F4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCE51B33195F236C0006C348 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCA3CABA1A883575003F3F4E;
+			remoteInfo = "TubeStatus WatchKit Extension";
+		};
 		FCE51B52195F236C0006C348 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FCE51B33195F236C0006C348 /* Project object */;
@@ -84,6 +118,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				FCE51B73195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex in Embed App Extensions */,
+				FCA3CAD41A883576003F3F4E /* TubeStatus WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -122,7 +157,20 @@
 		FC9A0DCD19AB5A79008DE646 /* SettingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTableViewCell.h; sourceTree = "<group>"; };
 		FC9A0DCE19AB5A79008DE646 /* SettingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTableViewCell.m; sourceTree = "<group>"; };
 		FC9A0DCF19AB5A79008DE646 /* SettingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingTableViewCell.xib; sourceTree = "<group>"; };
-		FC9B83BA1A80FAF100566F76 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FC9B83BA1A80FAF100566F76 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = TubeStatusWidget/PrefixHeader.pch; sourceTree = SOURCE_ROOT; };
+		FCA3CABB1A883575003F3F4E /* TubeStatus WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "TubeStatus WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA3CABE1A883575003F3F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA3CABF1A883575003F3F4E /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
+		FCA3CAC01A883575003F3F4E /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
+		FCA3CAC21A883575003F3F4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FCA3CAC61A883575003F3F4E /* TubeStatus WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TubeStatus WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCA3CACC1A883576003F3F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCA3CACE1A883576003F3F4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		FCA3CAD01A883576003F3F4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FCA3CADB1A883B74003F3F4E /* TubeStatus WatchKit Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "TubeStatus WatchKit Extension.entitlements"; sourceTree = "<group>"; };
+		FCA3CAF81A8844B7003F3F4E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		FCA3CAF91A884C10003F3F4E /* LineRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineRowController.h; sourceTree = "<group>"; };
+		FCA3CAFA1A884C10003F3F4E /* LineRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineRowController.m; sourceTree = "<group>"; };
 		FCD01419196087D8000FDBF0 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		FCD0141A196087D8000FDBF0 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		FCD0141C19608C54000FDBF0 /* TodayLineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayLineTableViewCell.h; sourceTree = "<group>"; };
@@ -153,6 +201,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FCA3CAB81A883575003F3F4E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCE51B38195F236C0006C348 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -225,12 +280,55 @@
 			path = TubeStatus/SDCloudUserDefaults;
 			sourceTree = "<group>";
 		};
+		FCA3CABC1A883575003F3F4E /* TubeStatus WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FCA3CABF1A883575003F3F4E /* InterfaceController.h */,
+				FCA3CAC01A883575003F3F4E /* InterfaceController.m */,
+				FCA3CAF91A884C10003F3F4E /* LineRowController.h */,
+				FCA3CAFA1A884C10003F3F4E /* LineRowController.m */,
+				FCA3CAC21A883575003F3F4E /* Images.xcassets */,
+				FCA3CABD1A883575003F3F4E /* Supporting Files */,
+			);
+			path = "TubeStatus WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		FCA3CABD1A883575003F3F4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCA3CAF81A8844B7003F3F4E /* PrefixHeader.pch */,
+				FCA3CABE1A883575003F3F4E /* Info.plist */,
+				FCA3CADB1A883B74003F3F4E /* TubeStatus WatchKit Extension.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCA3CACA1A883576003F3F4E /* TubeStatus WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				FCA3CACD1A883576003F3F4E /* Interface.storyboard */,
+				FCA3CAD01A883576003F3F4E /* Images.xcassets */,
+				FCA3CACB1A883576003F3F4E /* Supporting Files */,
+			);
+			path = "TubeStatus WatchKit App";
+			sourceTree = "<group>";
+		};
+		FCA3CACB1A883576003F3F4E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FCA3CACC1A883576003F3F4E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FCE51B32195F236C0006C348 = {
 			isa = PBXGroup;
 			children = (
 				FCE51B3D195F236C0006C348 /* TubeStatus */,
 				FCE51B54195F236C0006C348 /* TubeStatusTests */,
 				FCE51B69195F237D0006C348 /* TubeStatusWidget */,
+				FCA3CABC1A883575003F3F4E /* TubeStatus WatchKit Extension */,
+				FCA3CACA1A883576003F3F4E /* TubeStatus WatchKit App */,
 				FC82B03019BE33DF009CACEB /* AFNetworking */,
 				FC82B04D19BE3403009CACEB /* Reachability */,
 				FC82B05019BE3403009CACEB /* SDCloudUserDefaults */,
@@ -245,6 +343,8 @@
 				FCE51B3B195F236C0006C348 /* TubeStatus.app */,
 				FCE51B51195F236C0006C348 /* TubeStatusTests.xctest */,
 				FCE51B65195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex */,
+				FCA3CABB1A883575003F3F4E /* TubeStatus WatchKit Extension.appex */,
+				FCA3CAC61A883575003F3F4E /* TubeStatus WatchKit App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -337,6 +437,39 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FCA3CABA1A883575003F3F4E /* TubeStatus WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA3CADA1A883576003F3F4E /* Build configuration list for PBXNativeTarget "TubeStatus WatchKit Extension" */;
+			buildPhases = (
+				FCA3CAB71A883575003F3F4E /* Sources */,
+				FCA3CAB81A883575003F3F4E /* Frameworks */,
+				FCA3CAB91A883575003F3F4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FCA3CAC91A883576003F3F4E /* PBXTargetDependency */,
+			);
+			name = "TubeStatus WatchKit Extension";
+			productName = "TubeStatus WatchKit Extension";
+			productReference = FCA3CABB1A883575003F3F4E /* TubeStatus WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit-extension";
+		};
+		FCA3CAC51A883575003F3F4E /* TubeStatus WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCA3CAD91A883576003F3F4E /* Build configuration list for PBXNativeTarget "TubeStatus WatchKit App" */;
+			buildPhases = (
+				FCA3CAC41A883575003F3F4E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "TubeStatus WatchKit App";
+			productName = "TubeStatus WatchKit App";
+			productReference = FCA3CAC61A883575003F3F4E /* TubeStatus WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp";
+		};
 		FCE51B3A195F236C0006C348 /* TubeStatus */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCE51B5B195F236C0006C348 /* Build configuration list for PBXNativeTarget "TubeStatus" */;
@@ -351,6 +484,7 @@
 			dependencies = (
 				FCE51B72195F237D0006C348 /* PBXTargetDependency */,
 				FCE51B75195F237D0006C348 /* PBXTargetDependency */,
+				FCA3CAD31A883576003F3F4E /* PBXTargetDependency */,
 			);
 			name = TubeStatus;
 			productName = TubeStatus;
@@ -401,6 +535,21 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Code Canopy";
 				TargetAttributes = {
+					FCA3CABA1A883575003F3F4E = {
+						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 5DQD7ZRCTK;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
+					};
+					FCA3CAC51A883575003F3F4E = {
+						CreatedOnToolsVersion = 6.2;
+					};
 					FCE51B3A195F236C0006C348 = {
 						CreatedOnToolsVersion = 6.0;
 						DevelopmentTeam = 5DQD7ZRCTK;
@@ -427,6 +576,9 @@
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
 							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -447,11 +599,31 @@
 				FCE51B3A195F236C0006C348 /* TubeStatus */,
 				FCE51B50195F236C0006C348 /* TubeStatusTests */,
 				FCE51B64195F237D0006C348 /* TubeStatusWidget */,
+				FCA3CABA1A883575003F3F4E /* TubeStatus WatchKit Extension */,
+				FCA3CAC51A883575003F3F4E /* TubeStatus WatchKit App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FCA3CAB91A883575003F3F4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA3CAC71A883576003F3F4E /* TubeStatus WatchKit App.app in Resources */,
+				FCA3CAC31A883575003F3F4E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FCA3CAC41A883575003F3F4E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA3CACF1A883576003F3F4E /* Interface.storyboard in Resources */,
+				FCA3CAD11A883576003F3F4E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCE51B39195F236C0006C348 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -482,6 +654,28 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FCA3CAB71A883575003F3F4E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FCA3CAED1A88440D003F3F4E /* AFHTTPRequestOperation.m in Sources */,
+				FCA3CAEE1A88440D003F3F4E /* AFHTTPRequestOperationManager.m in Sources */,
+				FCA3CAEF1A88440D003F3F4E /* AFHTTPSessionManager.m in Sources */,
+				FCA3CAF01A88440D003F3F4E /* AFNetworkReachabilityManager.m in Sources */,
+				FCA3CAF11A88440D003F3F4E /* AFSecurityPolicy.m in Sources */,
+				FCA3CAFB1A884C10003F3F4E /* LineRowController.m in Sources */,
+				FCA3CAF21A88440D003F3F4E /* AFURLConnectionOperation.m in Sources */,
+				FCA3CAF31A88440D003F3F4E /* AFURLRequestSerialization.m in Sources */,
+				FCA3CAF41A88440D003F3F4E /* AFURLResponseSerialization.m in Sources */,
+				FCA3CAF51A88440D003F3F4E /* AFURLSessionManager.m in Sources */,
+				FCA3CAF61A884474003F3F4E /* Reachability.m in Sources */,
+				FCA3CAF71A88447D003F3F4E /* SDCloudUserDefaults.m in Sources */,
+				FCA3CAEB1A8843E5003F3F4E /* DataModel.m in Sources */,
+				FCA3CAEC1A88440D003F3F4E /* XMLParserDelegate.m in Sources */,
+				FCA3CAC11A883575003F3F4E /* InterfaceController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCE51B37195F236C0006C348 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -529,18 +723,28 @@
 				FC9B83C91A80FBEC00566F76 /* AFURLRequestSerialization.m in Sources */,
 				FC9B83CB1A80FBEC00566F76 /* AFURLResponseSerialization.m in Sources */,
 				FC9B83CD1A80FBEC00566F76 /* AFURLSessionManager.m in Sources */,
-				FCD0142219608F6F000FDBF0 /* XMLParserDelegate.m in Sources */,
+				FC82B05419BE3403009CACEB /* Reachability.m in Sources */,
 				FC82B05619BE3403009CACEB /* SDCloudUserDefaults.m in Sources */,
 				FCD0142119608F59000FDBF0 /* DataModel.m in Sources */,
+				FCD0142219608F6F000FDBF0 /* XMLParserDelegate.m in Sources */,
 				FCE51B6E195F237D0006C348 /* TodayViewController.m in Sources */,
 				FCD0141F19608C54000FDBF0 /* TodayLineTableViewCell.m in Sources */,
-				FC82B05419BE3403009CACEB /* Reachability.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FCA3CAC91A883576003F3F4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCA3CAC51A883575003F3F4E /* TubeStatus WatchKit App */;
+			targetProxy = FCA3CAC81A883576003F3F4E /* PBXContainerItemProxy */;
+		};
+		FCA3CAD31A883576003F3F4E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCA3CABA1A883575003F3F4E /* TubeStatus WatchKit Extension */;
+			targetProxy = FCA3CAD21A883576003F3F4E /* PBXContainerItemProxy */;
+		};
 		FCE51B53195F236C0006C348 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FCE51B3A195F236C0006C348 /* TubeStatus */;
@@ -559,6 +763,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		FCA3CACD1A883576003F3F4E /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FCA3CACE1A883576003F3F4E /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		FCE51B48195F236C0006C348 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -570,6 +782,82 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FCA3CAD51A883576003F3F4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "TubeStatus WatchKit Extension/TubeStatus WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TubeStatus WatchKit Extension/PrefixHeader.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TubeStatus WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		FCA3CAD61A883576003F3F4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "TubeStatus WatchKit Extension/TubeStatus WatchKit Extension.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TubeStatus WatchKit Extension/PrefixHeader.pch";
+				INFOPLIST_FILE = "TubeStatus WatchKit Extension/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		FCA3CAD71A883576003F3F4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IBSC_MODULE = TubeStatus_WatchKit_Extension;
+				INFOPLIST_FILE = "TubeStatus WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Debug;
+		};
+		FCA3CAD81A883576003F3F4E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COPY_PHASE_STRIP = NO;
+				IBSC_MODULE = TubeStatus_WatchKit_Extension;
+				INFOPLIST_FILE = "TubeStatus WatchKit App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+			};
+			name = Release;
+		};
 		FCE51B59195F236C0006C348 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -718,8 +1006,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TubeStatusWidget/com.dylanmaryk.TubeStatus.TubeStatusWidget.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dylan Maryk (A2MH8YVLP9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dylan Maryk (A2MH8YVLP9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TubeStatusWidget/PrefixHeader.pch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -741,8 +1029,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TubeStatusWidget/com.dylanmaryk.TubeStatus.TubeStatusWidget.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Dylan Maryk (A2MH8YVLP9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Dylan Maryk (A2MH8YVLP9)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = TubeStatusWidget/PrefixHeader.pch;
 				INFOPLIST_FILE = TubeStatusWidget/Info.plist;
@@ -759,6 +1047,22 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FCA3CAD91A883576003F3F4E /* Build configuration list for PBXNativeTarget "TubeStatus WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA3CAD71A883576003F3F4E /* Debug */,
+				FCA3CAD81A883576003F3F4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FCA3CADA1A883576003F3F4E /* Build configuration list for PBXNativeTarget "TubeStatus WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FCA3CAD51A883576003F3F4E /* Debug */,
+				FCA3CAD61A883576003F3F4E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		FCE51B36195F236C0006C348 /* Build configuration list for PBXProject "TubeStatus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

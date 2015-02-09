@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6750" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6735"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <label alignment="left" text="Last updated" id="uPk-qT-CsG">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                        </label>
+                        <table alignment="left" id="Siw-y5-Szn">
+                            <items>
+                                <tableRow identifier="default" selectable="NO" id="SUC-5X-9JW" customClass="LineRowController">
+                                    <group key="rootItem" width="1" height="0.0" alignment="left" layout="vertical" id="TvH-oZ-B6L">
+                                        <items>
+                                            <label alignment="left" text="Line name" numberOfLines="0" id="qPK-kd-efM"/>
+                                            <label alignment="left" text="Line status" numberOfLines="0" id="L9a-Fd-cHv">
+                                                <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                                            </label>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="lineGroup" destination="TvH-oZ-B6L" id="Ecf-IM-9xL"/>
+                                        <outlet property="lineNameLabel" destination="qPK-kd-efM" id="vsy-Kb-WaY"/>
+                                        <outlet property="lineStatusLabel" destination="L9a-Fd-cHv" id="LaW-Nq-yMC"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="lastUpdatedLabel" destination="uPk-qT-CsG" id="mih-8i-RJN"/>
+                        <outlet property="tableView" destination="Siw-y5-Szn" id="PDr-cB-zS0"/>
+                    </connections>
+                </controller>
+            </objects>
+        </scene>
+    </scenes>
+</document>
