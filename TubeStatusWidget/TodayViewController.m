@@ -213,7 +213,7 @@
     if (![lineStatusDetails isEqualToString:@""]) {
         return [NSString stringWithFormat:@"%@: %@", lineDescription, lineStatusDetails];
     } else {
-        return [NSString stringWithFormat:@"%@", lineDescription];
+        return lineDescription;
     }
 }
 
