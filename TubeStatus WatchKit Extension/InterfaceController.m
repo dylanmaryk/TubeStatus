@@ -9,12 +9,15 @@
 #import "InterfaceController.h"
 #import "LineRowController.h"
 #import "DataModel.h"
+#import "Reachability.h"
 
 @interface InterfaceController()
 
 @end
 
 @implementation InterfaceController {
+    Reachability *reachability;
+    
     NSMutableArray *cachedData;
 }
 
@@ -23,6 +26,13 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     
+    reachability = [Reachability reachabilityForInternetConnection];
+    [reachability startNotifier];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityChanged) name:kReachabilityChangedNotification object:nil];
+    
+    [DataModel registerForSettingsSync];
+    
     [self loadDataRefreshed:NO];
 }
 
@@ -30,6 +40,14 @@
     [super willActivate];
     
     [self loadDataRefreshed:YES];
+}
+
+- (void)reachabilityChanged {
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    
+    if (networkStatus ==  ReachableViaWiFi || networkStatus == ReachableViaWWAN) {
+        [self loadDataRefreshed:YES];
+    }
 }
 
 - (void)loadDataRefreshed:(bool)refreshedData {
@@ -54,8 +72,12 @@
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {
-        // Please select lines in the TubeStatus app to see their status.
+        [lastUpdatedLabel setText:@"Please select lines in the TubeStatus app to see their status."];
     }
+}
+
+- (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
+    [self loadDataRefreshed:YES];
 }
 
 - (NSString *)lineStatusLabelTextForRow:(int)row {
@@ -67,10 +89,6 @@
     } else {
         return lineDescription;
     }
-}
-
-- (void)didDeactivate {
-    [super didDeactivate];
 }
 
 @end
