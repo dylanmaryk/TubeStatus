@@ -62,13 +62,12 @@
             UIColor *lineColourColor = [NSKeyedUnarchiver unarchiveObjectWithData:lineColourData];
             
             LineRowController *lineRow = [tableView rowControllerAtIndex:i];
-            [lineRow.lineGroup setBackgroundColor:lineColourColor];
+            [lineRow.lineColourGroup setBackgroundColor:lineColourColor];
             [lineRow.lineNameLabel setText:[cachedData[i] valueForKey:@"name"]];
-            [lineRow.lineStatusLabel setText:nil]; // Temporary, remove when Apple bug fixed
             [lineRow.lineStatusLabel setText:[self lineStatusLabelTextForRow:i]];
         }
         
-        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [[DataModel getUserDefaults] valueForKey:@"lastUpdated"]]];
+        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated %@", [[DataModel getUserDefaults] valueForKey:@"lastUpdated"]]];
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {

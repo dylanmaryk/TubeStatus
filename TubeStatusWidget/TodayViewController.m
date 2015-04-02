@@ -142,7 +142,7 @@
         [todayLineTableView setFrame:tableFrame];
         [todayLineTableView reloadData];
         
-        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated: %@", [[DataModel getUserDefaults] valueForKey:@"lastUpdated"]]];
+        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated %@", [[DataModel getUserDefaults] valueForKey:@"lastUpdated"]]];
         
         int preferredWidgetHeight = tableFrame.origin.y + tableHeight;
         

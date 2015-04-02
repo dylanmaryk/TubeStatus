@@ -11,7 +11,7 @@
 
 @interface LineRowController : NSObject
 
-@property (nonatomic, retain) IBOutlet WKInterfaceGroup *lineGroup;
+@property (nonatomic, retain) IBOutlet WKInterfaceGroup *lineColourGroup;
 
 @property (nonatomic, retain) IBOutlet WKInterfaceLabel *lineNameLabel;
 @property (nonatomic, retain) IBOutlet WKInterfaceLabel *lineStatusLabel;

@@ -6,8 +6,8 @@
 //  Copyright (c) 2015 Dylan Maryk. All rights reserved.
 //
 
-#import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
+#import <WatchKit/WatchKit.h>
 
 @interface InterfaceController : WKInterfaceController
 
