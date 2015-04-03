@@ -1054,6 +1054,7 @@
 				FCA3CAD81A883576003F3F4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCA3CADA1A883576003F3F4E /* Build configuration list for PBXNativeTarget "TubeStatus WatchKit Extension" */ = {
 			isa = XCConfigurationList;
@@ -1062,6 +1063,7 @@
 				FCA3CAD61A883576003F3F4E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCE51B36195F236C0006C348 /* Build configuration list for PBXProject "TubeStatus" */ = {
 			isa = XCConfigurationList;
