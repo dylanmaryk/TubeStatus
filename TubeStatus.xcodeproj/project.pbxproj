@@ -35,7 +35,6 @@
 		FC9B83CB1A80FBEC00566F76 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04119BE33DF009CACEB /* AFURLResponseSerialization.m */; };
 		FC9B83CD1A80FBEC00566F76 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04319BE33DF009CACEB /* AFURLSessionManager.m */; };
 		FCA3CAC11A883575003F3F4E /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA3CAC01A883575003F3F4E /* InterfaceController.m */; };
-		FCA3CAC31A883575003F3F4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CAC21A883575003F3F4E /* Images.xcassets */; };
 		FCA3CAC71A883576003F3F4E /* TubeStatus WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CAC61A883575003F3F4E /* TubeStatus WatchKit App.app */; };
 		FCA3CACF1A883576003F3F4E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CACD1A883576003F3F4E /* Interface.storyboard */; };
 		FCA3CAD11A883576003F3F4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CAD01A883576003F3F4E /* Images.xcassets */; };
@@ -162,7 +161,6 @@
 		FCA3CABE1A883575003F3F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA3CABF1A883575003F3F4E /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
 		FCA3CAC01A883575003F3F4E /* InterfaceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterfaceController.m; sourceTree = "<group>"; };
-		FCA3CAC21A883575003F3F4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FCA3CAC61A883575003F3F4E /* TubeStatus WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TubeStatus WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCA3CACC1A883576003F3F4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCA3CACE1A883576003F3F4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
@@ -287,7 +285,6 @@
 				FCA3CAC01A883575003F3F4E /* InterfaceController.m */,
 				FCA3CAF91A884C10003F3F4E /* LineRowController.h */,
 				FCA3CAFA1A884C10003F3F4E /* LineRowController.m */,
-				FCA3CAC21A883575003F3F4E /* Images.xcassets */,
 				FCA3CABD1A883575003F3F4E /* Supporting Files */,
 			);
 			path = "TubeStatus WatchKit Extension";
@@ -611,7 +608,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCA3CAC71A883576003F3F4E /* TubeStatus WatchKit App.app in Resources */,
-				FCA3CAC31A883575003F3F4E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -826,7 +822,7 @@
 		FCA3CAD71A883576003F3F4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -845,7 +841,7 @@
 		FCA3CAD81A883576003F3F4E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
 				COPY_PHASE_STRIP = NO;
 				IBSC_MODULE = TubeStatus_WatchKit_Extension;
 				INFOPLIST_FILE = "TubeStatus WatchKit App/Info.plist";
