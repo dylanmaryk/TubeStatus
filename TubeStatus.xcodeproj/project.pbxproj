@@ -546,6 +546,7 @@
 					};
 					FCA3CAC51A883575003F3F4E = {
 						CreatedOnToolsVersion = 6.2;
+						DevelopmentTeam = 5DQD7ZRCTK;
 					};
 					FCE51B3A195F236C0006C348 = {
 						CreatedOnToolsVersion = 6.0;
@@ -823,6 +824,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -842,6 +844,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconWatch;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				IBSC_MODULE = TubeStatus_WatchKit_Extension;
 				INFOPLIST_FILE = "TubeStatus WatchKit App/Info.plist";
