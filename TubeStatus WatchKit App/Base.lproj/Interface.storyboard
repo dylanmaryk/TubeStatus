@@ -5,6 +5,28 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
     </dependencies>
     <scenes>
+        <!--Glance Interface Controller-->
+        <scene sceneID="evf-ZB-usa">
+            <objects>
+                <glanceController id="KXr-M5-OLi" customClass="GlanceInterfaceController">
+                    <items>
+                        <group alignment="left" id="gyD-8w-cEG">
+                            <items>
+                                <label alignment="left" text="Currently no disruptions on your selected lines." numberOfLines="0" id="qyy-1G-Ff6">
+                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleFootnote"/>
+                                </label>
+                            </items>
+                        </group>
+                        <group alignment="left" id="9X1-Ji-FQw"/>
+                    </items>
+                    <connections>
+                        <outlet property="statusLabel" destination="qyy-1G-Ff6" id="ovl-W3-Ajh"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="206" y="480"/>
+        </scene>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
@@ -46,6 +68,7 @@
                     </connections>
                 </controller>
             </objects>
+            <point key="canvasLocation" x="119" y="252"/>
         </scene>
     </scenes>
 </document>

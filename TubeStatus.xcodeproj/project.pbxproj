@@ -53,6 +53,7 @@
 		FCA3CAF61A884474003F3F4E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04F19BE3403009CACEB /* Reachability.m */; };
 		FCA3CAF71A88447D003F3F4E /* SDCloudUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B05219BE3403009CACEB /* SDCloudUserDefaults.m */; };
 		FCA3CAFB1A884C10003F3F4E /* LineRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA3CAFA1A884C10003F3F4E /* LineRowController.m */; };
+		FCB2A5101AD1CD970067B504 /* GlanceInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB2A50F1AD1CD970067B504 /* GlanceInterfaceController.m */; };
 		FCD0141B196087D8000FDBF0 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0141A196087D8000FDBF0 /* DataModel.m */; };
 		FCD0141F19608C54000FDBF0 /* TodayLineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0141D19608C54000FDBF0 /* TodayLineTableViewCell.m */; };
 		FCD0142019608C54000FDBF0 /* TodayLineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD0141E19608C54000FDBF0 /* TodayLineTableViewCell.xib */; };
@@ -169,6 +170,8 @@
 		FCA3CAF81A8844B7003F3F4E /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		FCA3CAF91A884C10003F3F4E /* LineRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineRowController.h; sourceTree = "<group>"; };
 		FCA3CAFA1A884C10003F3F4E /* LineRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineRowController.m; sourceTree = "<group>"; };
+		FCB2A50E1AD1CD970067B504 /* GlanceInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlanceInterfaceController.h; sourceTree = "<group>"; };
+		FCB2A50F1AD1CD970067B504 /* GlanceInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlanceInterfaceController.m; sourceTree = "<group>"; };
 		FCD01419196087D8000FDBF0 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
 		FCD0141A196087D8000FDBF0 /* DataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModel.m; sourceTree = "<group>"; };
 		FCD0141C19608C54000FDBF0 /* TodayLineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodayLineTableViewCell.h; sourceTree = "<group>"; };
@@ -285,6 +288,8 @@
 				FCA3CAC01A883575003F3F4E /* InterfaceController.m */,
 				FCA3CAF91A884C10003F3F4E /* LineRowController.h */,
 				FCA3CAFA1A884C10003F3F4E /* LineRowController.m */,
+				FCB2A50E1AD1CD970067B504 /* GlanceInterfaceController.h */,
+				FCB2A50F1AD1CD970067B504 /* GlanceInterfaceController.m */,
 				FCA3CABD1A883575003F3F4E /* Supporting Files */,
 			);
 			path = "TubeStatus WatchKit Extension";
@@ -660,6 +665,7 @@
 				FCA3CAEF1A88440D003F3F4E /* AFHTTPSessionManager.m in Sources */,
 				FCA3CAF01A88440D003F3F4E /* AFNetworkReachabilityManager.m in Sources */,
 				FCA3CAF11A88440D003F3F4E /* AFSecurityPolicy.m in Sources */,
+				FCB2A5101AD1CD970067B504 /* GlanceInterfaceController.m in Sources */,
 				FCA3CAFB1A884C10003F3F4E /* LineRowController.m in Sources */,
 				FCA3CAF21A88440D003F3F4E /* AFURLConnectionOperation.m in Sources */,
 				FCA3CAF31A88440D003F3F4E /* AFURLRequestSerialization.m in Sources */,

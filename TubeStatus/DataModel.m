@@ -51,6 +51,19 @@ static NSString *suiteName = @"group.com.dylanmaryk.TubeStatus";
     }
 }
 
++ (NSMutableArray *)getDataForDisruptedLinesRefreshed:(bool)refreshedData {
+    NSMutableArray *cachedData = [self getDataForSelectedLinesOnly:YES refreshedData:refreshedData];
+    NSMutableArray *cachedDataSelectedLinesDisrupted = [NSMutableArray array];
+    
+    for (NSDictionary *lineDict in cachedData) {
+        if (![[lineDict valueForKey:@"description"] isEqualToString:@"Good Service"]) {
+            [cachedDataSelectedLinesDisrupted addObject:lineDict];
+        }
+    }
+    
+    return cachedDataSelectedLinesDisrupted;
+}
+
 + (bool)getRefreshedData {
     XMLParserDelegate *xmlParserDelegate = [[XMLParserDelegate alloc] init];
     

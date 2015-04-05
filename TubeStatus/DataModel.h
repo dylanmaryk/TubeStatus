@@ -11,6 +11,7 @@
 @interface DataModel : NSObject
 
 + (NSMutableArray *)getDataForSelectedLinesOnly:(bool)selectedLinesOnly refreshedData:(bool)refreshedData;
++ (NSMutableArray *)getDataForDisruptedLinesRefreshed:(bool)refreshedData;
 
 + (bool)getRefreshedData;
 
