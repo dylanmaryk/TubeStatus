@@ -71,7 +71,7 @@
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {
-        [lastUpdatedLabel setText:@"Please select lines in the TubeStatus app to see their status."];
+        [lastUpdatedLabel setText:@"Please select lines in the TubeStatus app on your iPhone to see their status."];
     }
 }
 
