@@ -9,24 +9,24 @@
 /* Begin PBXBuildFile section */
 		FC092A60195F4C46001BA2F6 /* LineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC092A5E195F4C46001BA2F6 /* LineTableViewCell.m */; };
 		FC092A61195F4C46001BA2F6 /* LineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC092A5F195F4C46001BA2F6 /* LineTableViewCell.xib */; };
-		FC3F07111C53E02B00F59E1C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07051C53E02B00F59E1C /* AFHTTPSessionManager.m */; };
-		FC3F07121C53E02B00F59E1C /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07081C53E02B00F59E1C /* AFNetworkReachabilityManager.m */; };
-		FC3F07131C53E02B00F59E1C /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F070A1C53E02B00F59E1C /* AFSecurityPolicy.m */; };
-		FC3F07141C53E02B00F59E1C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F070C1C53E02B00F59E1C /* AFURLRequestSerialization.m */; };
-		FC3F07151C53E02B00F59E1C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F070E1C53E02B00F59E1C /* AFURLResponseSerialization.m */; };
-		FC3F07161C53E02B00F59E1C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07101C53E02B00F59E1C /* AFURLSessionManager.m */; };
-		FC3F07181C53E0DD00F59E1C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07051C53E02B00F59E1C /* AFHTTPSessionManager.m */; };
-		FC3F071B1C53E0DD00F59E1C /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07081C53E02B00F59E1C /* AFNetworkReachabilityManager.m */; };
-		FC3F071D1C53E0DD00F59E1C /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F070A1C53E02B00F59E1C /* AFSecurityPolicy.m */; };
-		FC3F071F1C53E0DD00F59E1C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F070C1C53E02B00F59E1C /* AFURLRequestSerialization.m */; };
-		FC3F07211C53E0DD00F59E1C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F070E1C53E02B00F59E1C /* AFURLResponseSerialization.m */; };
-		FC3F07231C53E0DD00F59E1C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07101C53E02B00F59E1C /* AFURLSessionManager.m */; };
-		FC3F07241C53E10E00F59E1C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07051C53E02B00F59E1C /* AFHTTPSessionManager.m */; };
-		FC3F07251C53E10E00F59E1C /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07081C53E02B00F59E1C /* AFNetworkReachabilityManager.m */; };
-		FC3F07261C53E10E00F59E1C /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F070A1C53E02B00F59E1C /* AFSecurityPolicy.m */; };
-		FC3F07271C53E10E00F59E1C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F070C1C53E02B00F59E1C /* AFURLRequestSerialization.m */; };
-		FC3F07281C53E10E00F59E1C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F070E1C53E02B00F59E1C /* AFURLResponseSerialization.m */; };
-		FC3F07291C53E10E00F59E1C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07101C53E02B00F59E1C /* AFURLSessionManager.m */; };
+		FC3F073B1C53E9BE00F59E1C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F072F1C53E9BE00F59E1C /* AFHTTPSessionManager.m */; };
+		FC3F073C1C53E9BE00F59E1C /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07321C53E9BE00F59E1C /* AFNetworkReachabilityManager.m */; };
+		FC3F073D1C53E9BE00F59E1C /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07341C53E9BE00F59E1C /* AFSecurityPolicy.m */; };
+		FC3F073E1C53E9BE00F59E1C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07361C53E9BE00F59E1C /* AFURLRequestSerialization.m */; };
+		FC3F073F1C53E9BE00F59E1C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07381C53E9BE00F59E1C /* AFURLResponseSerialization.m */; };
+		FC3F07401C53E9BE00F59E1C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F073A1C53E9BE00F59E1C /* AFURLSessionManager.m */; };
+		FC3F07411C53E9DA00F59E1C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F072F1C53E9BE00F59E1C /* AFHTTPSessionManager.m */; };
+		FC3F07421C53E9DA00F59E1C /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07321C53E9BE00F59E1C /* AFNetworkReachabilityManager.m */; };
+		FC3F07431C53E9DA00F59E1C /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07341C53E9BE00F59E1C /* AFSecurityPolicy.m */; };
+		FC3F07441C53E9DA00F59E1C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07361C53E9BE00F59E1C /* AFURLRequestSerialization.m */; };
+		FC3F07451C53E9DA00F59E1C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07381C53E9BE00F59E1C /* AFURLResponseSerialization.m */; };
+		FC3F07461C53E9DA00F59E1C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F073A1C53E9BE00F59E1C /* AFURLSessionManager.m */; };
+		FC3F07471C53E9E700F59E1C /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F072F1C53E9BE00F59E1C /* AFHTTPSessionManager.m */; };
+		FC3F07481C53E9E700F59E1C /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07321C53E9BE00F59E1C /* AFNetworkReachabilityManager.m */; };
+		FC3F07491C53E9E700F59E1C /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07341C53E9BE00F59E1C /* AFSecurityPolicy.m */; };
+		FC3F074A1C53E9E700F59E1C /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07361C53E9BE00F59E1C /* AFURLRequestSerialization.m */; };
+		FC3F074B1C53E9E700F59E1C /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F07381C53E9BE00F59E1C /* AFURLResponseSerialization.m */; };
+		FC3F074C1C53E9E700F59E1C /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC3F073A1C53E9BE00F59E1C /* AFURLSessionManager.m */; };
 		FC4D83221C53DDDF0026B722 /* TubeStatus WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCA3CABB1A883575003F3F4E /* TubeStatus WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FC4D83251C53DDDF0026B722 /* TubeStatus WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FCA3CAC61A883575003F3F4E /* TubeStatus WatchKit App.app */; };
 		FC67C3F119806F3A008B56AE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC67C3F019806F3A008B56AE /* SettingsViewController.m */; };
@@ -139,19 +139,19 @@
 		FC092A5D195F4C46001BA2F6 /* LineTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineTableViewCell.h; sourceTree = "<group>"; };
 		FC092A5E195F4C46001BA2F6 /* LineTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineTableViewCell.m; sourceTree = "<group>"; };
 		FC092A5F195F4C46001BA2F6 /* LineTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LineTableViewCell.xib; sourceTree = "<group>"; };
-		FC3F07041C53E02B00F59E1C /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
-		FC3F07051C53E02B00F59E1C /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
-		FC3F07061C53E02B00F59E1C /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
-		FC3F07071C53E02B00F59E1C /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		FC3F07081C53E02B00F59E1C /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
-		FC3F07091C53E02B00F59E1C /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
-		FC3F070A1C53E02B00F59E1C /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
-		FC3F070B1C53E02B00F59E1C /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
-		FC3F070C1C53E02B00F59E1C /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
-		FC3F070D1C53E02B00F59E1C /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
-		FC3F070E1C53E02B00F59E1C /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
-		FC3F070F1C53E02B00F59E1C /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
-		FC3F07101C53E02B00F59E1C /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		FC3F072E1C53E9BE00F59E1C /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = TubeStatus/AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		FC3F072F1C53E9BE00F59E1C /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = TubeStatus/AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		FC3F07301C53E9BE00F59E1C /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = TubeStatus/AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		FC3F07311C53E9BE00F59E1C /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = TubeStatus/AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		FC3F07321C53E9BE00F59E1C /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = TubeStatus/AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		FC3F07331C53E9BE00F59E1C /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = TubeStatus/AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		FC3F07341C53E9BE00F59E1C /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = TubeStatus/AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		FC3F07351C53E9BE00F59E1C /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = TubeStatus/AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		FC3F07361C53E9BE00F59E1C /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = TubeStatus/AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		FC3F07371C53E9BE00F59E1C /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = TubeStatus/AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		FC3F07381C53E9BE00F59E1C /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = TubeStatus/AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		FC3F07391C53E9BE00F59E1C /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = TubeStatus/AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		FC3F073A1C53E9BE00F59E1C /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = TubeStatus/AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
 		FC67C3EF19806F3A008B56AE /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		FC67C3F019806F3A008B56AE /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		FC82B04E19BE3403009CACEB /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
@@ -239,19 +239,19 @@
 		FC3F07031C53E00C00F59E1C /* AFNetworking */ = {
 			isa = PBXGroup;
 			children = (
-				FC3F07041C53E02B00F59E1C /* AFHTTPSessionManager.h */,
-				FC3F07051C53E02B00F59E1C /* AFHTTPSessionManager.m */,
-				FC3F07061C53E02B00F59E1C /* AFNetworking.h */,
-				FC3F07071C53E02B00F59E1C /* AFNetworkReachabilityManager.h */,
-				FC3F07081C53E02B00F59E1C /* AFNetworkReachabilityManager.m */,
-				FC3F07091C53E02B00F59E1C /* AFSecurityPolicy.h */,
-				FC3F070A1C53E02B00F59E1C /* AFSecurityPolicy.m */,
-				FC3F070B1C53E02B00F59E1C /* AFURLRequestSerialization.h */,
-				FC3F070C1C53E02B00F59E1C /* AFURLRequestSerialization.m */,
-				FC3F070D1C53E02B00F59E1C /* AFURLResponseSerialization.h */,
-				FC3F070E1C53E02B00F59E1C /* AFURLResponseSerialization.m */,
-				FC3F070F1C53E02B00F59E1C /* AFURLSessionManager.h */,
-				FC3F07101C53E02B00F59E1C /* AFURLSessionManager.m */,
+				FC3F072E1C53E9BE00F59E1C /* AFHTTPSessionManager.h */,
+				FC3F072F1C53E9BE00F59E1C /* AFHTTPSessionManager.m */,
+				FC3F07301C53E9BE00F59E1C /* AFNetworking.h */,
+				FC3F07311C53E9BE00F59E1C /* AFNetworkReachabilityManager.h */,
+				FC3F07321C53E9BE00F59E1C /* AFNetworkReachabilityManager.m */,
+				FC3F07331C53E9BE00F59E1C /* AFSecurityPolicy.h */,
+				FC3F07341C53E9BE00F59E1C /* AFSecurityPolicy.m */,
+				FC3F07351C53E9BE00F59E1C /* AFURLRequestSerialization.h */,
+				FC3F07361C53E9BE00F59E1C /* AFURLRequestSerialization.m */,
+				FC3F07371C53E9BE00F59E1C /* AFURLResponseSerialization.h */,
+				FC3F07381C53E9BE00F59E1C /* AFURLResponseSerialization.m */,
+				FC3F07391C53E9BE00F59E1C /* AFURLSessionManager.h */,
+				FC3F073A1C53E9BE00F59E1C /* AFURLSessionManager.m */,
 			);
 			name = AFNetworking;
 			sourceTree = "<group>";
@@ -654,12 +654,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC3F07241C53E10E00F59E1C /* AFHTTPSessionManager.m in Sources */,
-				FC3F07251C53E10E00F59E1C /* AFNetworkReachabilityManager.m in Sources */,
-				FC3F07261C53E10E00F59E1C /* AFSecurityPolicy.m in Sources */,
-				FC3F07271C53E10E00F59E1C /* AFURLRequestSerialization.m in Sources */,
-				FC3F07281C53E10E00F59E1C /* AFURLResponseSerialization.m in Sources */,
-				FC3F07291C53E10E00F59E1C /* AFURLSessionManager.m in Sources */,
+				FC3F07411C53E9DA00F59E1C /* AFHTTPSessionManager.m in Sources */,
+				FC3F07421C53E9DA00F59E1C /* AFNetworkReachabilityManager.m in Sources */,
+				FC3F07431C53E9DA00F59E1C /* AFSecurityPolicy.m in Sources */,
+				FC3F07441C53E9DA00F59E1C /* AFURLRequestSerialization.m in Sources */,
+				FC3F07451C53E9DA00F59E1C /* AFURLResponseSerialization.m in Sources */,
+				FC3F07461C53E9DA00F59E1C /* AFURLSessionManager.m in Sources */,
 				FCA3CAFB1A884C10003F3F4E /* LineRowController.m in Sources */,
 				FCA3CAF71A88447D003F3F4E /* SDCloudUserDefaults.m in Sources */,
 				FCA3CAEB1A8843E5003F3F4E /* DataModel.m in Sources */,
@@ -676,17 +676,17 @@
 				FCE51B7C195F251B0006C348 /* XMLParserDelegate.m in Sources */,
 				FC9A0DD019AB5A79008DE646 /* SettingTableViewCell.m in Sources */,
 				FC82B05319BE3403009CACEB /* Reachability.m in Sources */,
-				FC3F07151C53E02B00F59E1C /* AFURLResponseSerialization.m in Sources */,
+				FC3F073F1C53E9BE00F59E1C /* AFURLResponseSerialization.m in Sources */,
 				FC092A60195F4C46001BA2F6 /* LineTableViewCell.m in Sources */,
-				FC3F07141C53E02B00F59E1C /* AFURLRequestSerialization.m in Sources */,
-				FC3F07111C53E02B00F59E1C /* AFHTTPSessionManager.m in Sources */,
+				FC3F073E1C53E9BE00F59E1C /* AFURLRequestSerialization.m in Sources */,
+				FC3F073B1C53E9BE00F59E1C /* AFHTTPSessionManager.m in Sources */,
 				FCE51B44195F236C0006C348 /* AppDelegate.m in Sources */,
-				FC3F07161C53E02B00F59E1C /* AFURLSessionManager.m in Sources */,
+				FC3F07401C53E9BE00F59E1C /* AFURLSessionManager.m in Sources */,
 				FCE51B41195F236C0006C348 /* main.m in Sources */,
 				FC82B05519BE3403009CACEB /* SDCloudUserDefaults.m in Sources */,
-				FC3F07131C53E02B00F59E1C /* AFSecurityPolicy.m in Sources */,
+				FC3F073D1C53E9BE00F59E1C /* AFSecurityPolicy.m in Sources */,
 				FCD0141B196087D8000FDBF0 /* DataModel.m in Sources */,
-				FC3F07121C53E02B00F59E1C /* AFNetworkReachabilityManager.m in Sources */,
+				FC3F073C1C53E9BE00F59E1C /* AFNetworkReachabilityManager.m in Sources */,
 				FC67C3F119806F3A008B56AE /* SettingsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -703,12 +703,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC3F07181C53E0DD00F59E1C /* AFHTTPSessionManager.m in Sources */,
-				FC3F071B1C53E0DD00F59E1C /* AFNetworkReachabilityManager.m in Sources */,
-				FC3F071D1C53E0DD00F59E1C /* AFSecurityPolicy.m in Sources */,
-				FC3F071F1C53E0DD00F59E1C /* AFURLRequestSerialization.m in Sources */,
-				FC3F07211C53E0DD00F59E1C /* AFURLResponseSerialization.m in Sources */,
-				FC3F07231C53E0DD00F59E1C /* AFURLSessionManager.m in Sources */,
+				FC3F07471C53E9E700F59E1C /* AFHTTPSessionManager.m in Sources */,
+				FC3F07481C53E9E700F59E1C /* AFNetworkReachabilityManager.m in Sources */,
+				FC3F07491C53E9E700F59E1C /* AFSecurityPolicy.m in Sources */,
+				FC3F074A1C53E9E700F59E1C /* AFURLRequestSerialization.m in Sources */,
+				FC3F074B1C53E9E700F59E1C /* AFURLResponseSerialization.m in Sources */,
+				FC3F074C1C53E9E700F59E1C /* AFURLSessionManager.m in Sources */,
 				FC82B05419BE3403009CACEB /* Reachability.m in Sources */,
 				FC82B05619BE3403009CACEB /* SDCloudUserDefaults.m in Sources */,
 				FCD0142119608F59000FDBF0 /* DataModel.m in Sources */,
