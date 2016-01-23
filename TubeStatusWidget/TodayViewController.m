@@ -58,7 +58,6 @@
 - (void)handleTableViewTap {
     if (scrollTableViewTimer.isValid) {
         [todayLineTableView setContentOffset:CGPointMake(todayLineTableView.contentOffset.x, todayLineTableView.contentOffset.y) animated:NO];
-        
         [scrollTableViewTimer invalidate];
     } else if (tableViewScrollingDown) {
         [self scrollTableViewDown];

@@ -83,7 +83,7 @@
         }
     } else {
         for (NSDictionary *line in newCachedData) {
-            [line setValue:[NSNumber numberWithBool:NO] forKey:@"setting"];
+            [line setValue:[NSNumber numberWithBool:YES] forKey:@"setting"];
         }
     }
     
