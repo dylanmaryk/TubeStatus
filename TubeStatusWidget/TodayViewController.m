@@ -47,6 +47,12 @@
     [self loadDataRefreshed:NO];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self loadDataRefreshed:YES];
+}
+
 - (void)reachabilityChanged {
     NetworkStatus networkStatus = [reachability currentReachabilityStatus];
     

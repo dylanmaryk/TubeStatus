@@ -53,7 +53,12 @@
     
     if (cachedData) {
         for (NSDictionary *line in cachedData) {
-            [cachedSettings addObject:[line objectForKey:@"setting"]];
+            // Check in case new line was added since first run, which would be without a value for "setting".
+            if ([line objectForKey:@"setting"]) {
+                [cachedSettings addObject:[line objectForKey:@"setting"]];
+            } else {
+                [cachedSettings addObject:[NSNumber numberWithBool:YES]];
+            }
         }
     }
 }
