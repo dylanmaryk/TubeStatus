@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FC092A60195F4C46001BA2F6 /* LineTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC092A5E195F4C46001BA2F6 /* LineTableViewCell.m */; };
 		FC092A61195F4C46001BA2F6 /* LineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC092A5F195F4C46001BA2F6 /* LineTableViewCell.xib */; };
+		FC4D83221C53DDDF0026B722 /* TubeStatus WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCA3CABB1A883575003F3F4E /* TubeStatus WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FC4D83251C53DDDF0026B722 /* TubeStatus WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = FCA3CAC61A883575003F3F4E /* TubeStatus WatchKit App.app */; };
 		FC67C3F119806F3A008B56AE /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC67C3F019806F3A008B56AE /* SettingsViewController.m */; };
 		FC82B04419BE33DF009CACEB /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03219BE33DF009CACEB /* AFHTTPRequestOperation.m */; };
 		FC82B04519BE33DF009CACEB /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03419BE33DF009CACEB /* AFHTTPRequestOperationManager.m */; };
@@ -35,10 +37,8 @@
 		FC9B83CB1A80FBEC00566F76 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04119BE33DF009CACEB /* AFURLResponseSerialization.m */; };
 		FC9B83CD1A80FBEC00566F76 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B04319BE33DF009CACEB /* AFURLSessionManager.m */; };
 		FCA3CAC11A883575003F3F4E /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA3CAC01A883575003F3F4E /* InterfaceController.m */; };
-		FCA3CAC71A883576003F3F4E /* TubeStatus WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CAC61A883575003F3F4E /* TubeStatus WatchKit App.app */; };
 		FCA3CACF1A883576003F3F4E /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CACD1A883576003F3F4E /* Interface.storyboard */; };
 		FCA3CAD11A883576003F3F4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCA3CAD01A883576003F3F4E /* Images.xcassets */; };
-		FCA3CAD41A883576003F3F4E /* TubeStatus WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = FCA3CABB1A883575003F3F4E /* TubeStatus WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FCA3CAEB1A8843E5003F3F4E /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FCD0141A196087D8000FDBF0 /* DataModel.m */; };
 		FCA3CAEC1A88440D003F3F4E /* XMLParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE51B7B195F251B0006C348 /* XMLParserDelegate.m */; };
 		FCA3CAED1A88440D003F3F4E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FC82B03219BE33DF009CACEB /* AFHTTPRequestOperation.m */; };
@@ -72,19 +72,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FCA3CAC81A883576003F3F4E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FCE51B33195F236C0006C348 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FCA3CAC51A883575003F3F4E;
-			remoteInfo = "TubeStatus WatchKit App";
-		};
-		FCA3CAD21A883576003F3F4E /* PBXContainerItemProxy */ = {
+		FC4D83201C53DDDF0026B722 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FCE51B33195F236C0006C348 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = FCA3CABA1A883575003F3F4E;
 			remoteInfo = "TubeStatus WatchKit Extension";
+		};
+		FC4D83231C53DDDF0026B722 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FCE51B33195F236C0006C348 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FCA3CAC51A883575003F3F4E;
+			remoteInfo = "TubeStatus WatchKit App";
 		};
 		FCE51B52195F236C0006C348 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -110,6 +110,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		FC4D83261C53DDDF0026B722 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FC4D83221C53DDDF0026B722 /* TubeStatus WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FC4D83271C53DDDF0026B722 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				FC4D83251C53DDDF0026B722 /* TubeStatus WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FCE51B79195F237D0006C348 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -117,7 +139,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				FCE51B73195F237D0006C348 /* com.dylanmaryk.TubeStatus.TubeStatusWidget.appex in Embed App Extensions */,
-				FCA3CAD41A883576003F3F4E /* TubeStatus WatchKit Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -445,27 +466,28 @@
 			buildRules = (
 			);
 			dependencies = (
-				FCA3CAC91A883576003F3F4E /* PBXTargetDependency */,
 			);
 			name = "TubeStatus WatchKit Extension";
 			productName = "TubeStatus WatchKit Extension";
 			productReference = FCA3CABB1A883575003F3F4E /* TubeStatus WatchKit Extension.appex */;
-			productType = "com.apple.product-type.watchkit-extension";
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 		FCA3CAC51A883575003F3F4E /* TubeStatus WatchKit App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FCA3CAD91A883576003F3F4E /* Build configuration list for PBXNativeTarget "TubeStatus WatchKit App" */;
 			buildPhases = (
 				FCA3CAC41A883575003F3F4E /* Resources */,
+				FC4D83261C53DDDF0026B722 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FC4D83211C53DDDF0026B722 /* PBXTargetDependency */,
 			);
 			name = "TubeStatus WatchKit App";
 			productName = "TubeStatus WatchKit App";
 			productReference = FCA3CAC61A883575003F3F4E /* TubeStatus WatchKit App.app */;
-			productType = "com.apple.product-type.application.watchapp";
+			productType = "com.apple.product-type.application.watchapp2";
 		};
 		FCE51B3A195F236C0006C348 /* TubeStatus */ = {
 			isa = PBXNativeTarget;
@@ -475,13 +497,14 @@
 				FCE51B38195F236C0006C348 /* Frameworks */,
 				FCE51B39195F236C0006C348 /* Resources */,
 				FCE51B79195F237D0006C348 /* Embed App Extensions */,
+				FC4D83271C53DDDF0026B722 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				FCE51B72195F237D0006C348 /* PBXTargetDependency */,
 				FCE51B75195F237D0006C348 /* PBXTargetDependency */,
-				FCA3CAD31A883576003F3F4E /* PBXTargetDependency */,
+				FC4D83241C53DDDF0026B722 /* PBXTargetDependency */,
 			);
 			name = TubeStatus;
 			productName = TubeStatus;
@@ -529,7 +552,7 @@
 		FCE51B33195F236C0006C348 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Code Canopy";
 				TargetAttributes = {
 					FCA3CABA1A883575003F3F4E = {
@@ -608,7 +631,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FCA3CAC71A883576003F3F4E /* TubeStatus WatchKit App.app in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,15 +754,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FCA3CAC91A883576003F3F4E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FCA3CAC51A883575003F3F4E /* TubeStatus WatchKit App */;
-			targetProxy = FCA3CAC81A883576003F3F4E /* PBXContainerItemProxy */;
-		};
-		FCA3CAD31A883576003F3F4E /* PBXTargetDependency */ = {
+		FC4D83211C53DDDF0026B722 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FCA3CABA1A883575003F3F4E /* TubeStatus WatchKit Extension */;
-			targetProxy = FCA3CAD21A883576003F3F4E /* PBXContainerItemProxy */;
+			targetProxy = FC4D83201C53DDDF0026B722 /* PBXContainerItemProxy */;
+		};
+		FC4D83241C53DDDF0026B722 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FCA3CAC51A883575003F3F4E /* TubeStatus WatchKit App */;
+			targetProxy = FC4D83231C53DDDF0026B722 /* PBXContainerItemProxy */;
 		};
 		FCE51B53195F236C0006C348 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -785,6 +807,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TubeStatus WatchKit Extension/TubeStatus WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TubeStatus WatchKit Extension/PrefixHeader.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -795,9 +818,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylanmaryk.TubeStatus.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -807,6 +834,7 @@
 				CODE_SIGN_ENTITLEMENTS = "TubeStatus WatchKit Extension/TubeStatus WatchKit Extension.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TubeStatus WatchKit Extension/PrefixHeader.pch";
@@ -814,9 +842,13 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylanmaryk.TubeStatus.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -831,12 +863,13 @@
 				);
 				IBSC_MODULE = TubeStatus_WatchKit_Extension;
 				INFOPLIST_FILE = "TubeStatus WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylanmaryk.TubeStatus.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -848,12 +881,13 @@
 				COPY_PHASE_STRIP = NO;
 				IBSC_MODULE = TubeStatus_WatchKit_Extension;
 				INFOPLIST_FILE = "TubeStatus WatchKit App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dylanmaryk.TubeStatus.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				"TARGETED_DEVICE_FAMILY[sdk=iphonesimulator*]" = "1,4";
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
@@ -877,6 +911,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -945,6 +980,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TubeStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dylanmaryk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -960,6 +996,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = TubeStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dylanmaryk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -980,6 +1017,7 @@
 				INFOPLIST_FILE = TubeStatusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dylanmaryk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -996,6 +1034,7 @@
 				INFOPLIST_FILE = TubeStatusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dylanmaryk.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 			};
@@ -1017,6 +1056,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_NAME}";
 				PRODUCT_NAME = "com.dylanmaryk.TubeStatus.$(TARGET_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
@@ -1036,6 +1076,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "${PRODUCT_NAME}";
 				PRODUCT_NAME = "com.dylanmaryk.TubeStatus.$(TARGET_NAME:rfc1034identifier)";
 				PROVISIONING_PROFILE = "";
 				SKIP_INSTALL = YES;
