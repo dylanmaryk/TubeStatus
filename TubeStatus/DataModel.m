@@ -96,7 +96,6 @@ static NSString *suiteName = @"group.com.dylanmaryk.TubeStatus";
 
 + (void)setCachedSetting:(bool)settingValue forIdentifier:(NSString *)settingIdentifier {
     NSMutableDictionary *cachedAppSettings = [[[self getUserDefaults] valueForKey:@"appSettings"] mutableCopy];
-    
     [cachedAppSettings setValue:[NSNumber numberWithBool:settingValue] forKey:settingIdentifier];
     
     [self setUserDefaultsObject:cachedAppSettings forKey:@"appSettings" andSync:YES];
@@ -136,7 +135,7 @@ static NSString *suiteName = @"group.com.dylanmaryk.TubeStatus";
         }
         
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager POST:@"http://api.tubestatus.dylanmaryk.com:8081/prefs" parameters:@{ @"devicetoken":deviceToken, @"linespref":linesPref, @"dayspref":daysPref } success:nil failure:nil];
+        [manager POST:@"http://api.tubestatus.dylanmaryk.com/prefs" parameters:@{ @"devicetoken":deviceToken, @"linespref":linesPref, @"dayspref":daysPref } success:nil failure:nil];
     }
 }
 
