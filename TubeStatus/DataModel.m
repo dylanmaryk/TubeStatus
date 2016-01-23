@@ -8,7 +8,7 @@
 
 #import "DataModel.h"
 #import "XMLParserDelegate.h"
-#import "AFHTTPRequestOperationManager.h"
+#import "AFHTTPSessionManager.h"
 #import "SDCloudUserDefaults.h"
 
 @implementation DataModel
@@ -134,8 +134,8 @@ static NSString *suiteName = @"group.com.dylanmaryk.TubeStatus";
             daysPref = @"";
         }
         
-        AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-        [manager POST:@"http://api.tubestatus.dylanmaryk.com/prefs" parameters:@{ @"devicetoken":deviceToken, @"linespref":linesPref, @"dayspref":daysPref } success:nil failure:nil];
+        AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+        [manager POST:@"http://api.tubestatus.dylanmaryk.com/prefs" parameters:@{ @"devicetoken":deviceToken, @"linespref":linesPref, @"dayspref":daysPref } progress:nil success:nil failure:nil];
     }
 }
 

@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "DataModel.h"
-#import "AFHTTPRequestOperationManager.h"
 
 @interface AppDelegate ()
 
