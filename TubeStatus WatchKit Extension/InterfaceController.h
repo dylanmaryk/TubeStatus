@@ -9,7 +9,9 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 
-@interface InterfaceController : WKInterfaceController
+@import WatchConnectivity;
+
+@interface InterfaceController : WKInterfaceController <WCSessionDelegate>
 
 @property (nonatomic, retain) IBOutlet WKInterfaceLabel *lastUpdatedLabel;
 

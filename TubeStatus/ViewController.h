@@ -10,7 +10,9 @@
 
 #import "LineTableViewCell.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@import WatchConnectivity;
+
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, WCSessionDelegate> {
     IBOutlet LineTableViewCell *lineTableViewCell;
 }
 

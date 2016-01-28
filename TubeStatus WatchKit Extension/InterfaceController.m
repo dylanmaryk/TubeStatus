@@ -57,6 +57,12 @@
     } else {
         [lastUpdatedLabel setText:@"Please select lines in the TubeStatus app on your iPhone to see their status."];
     }
+    
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+    }
 }
 
 - (void)table:(WKInterfaceTable *)table didSelectRowAtIndex:(NSInteger)rowIndex {
@@ -72,6 +78,12 @@
     } else {
         return lineDescription;
     }
+}
+
+- (void)session:(WCSession *)session didReceiveApplicationContext:(nonnull NSDictionary<NSString *,id> *)applicationContext {
+    [DataModel setUserDefaultsObject:[applicationContext valueForKey:@"cachedData"] forKey:@"cachedData" andSync:YES];
+    
+    [self loadDataRefreshed:YES];
 }
 
 @end

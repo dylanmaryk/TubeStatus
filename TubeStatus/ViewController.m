@@ -99,6 +99,13 @@
     
     [DataModel setUserDefaultsObject:cachedData forKey:@"cachedData" andSync:YES];
     
+    if ([WCSession isSupported]) {
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+        [session updateApplicationContext:[NSDictionary dictionaryWithObjectsAndKeys:cachedData, @"cachedData", nil] error:nil];
+    }
+    
     // Refresh data using code below? May impact performance, but otherwise cached data not updated until viewDidLoad called again or widget displayed. Not refreshing data here results in cached data being "reset" to when viewDidLoad was called.
     
     // [self loadDataRefreshed:YES tryLoadingRefreshedDataIfFails:NO];
