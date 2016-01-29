@@ -135,9 +135,8 @@
         NSMutableArray *totalWidgetHeights = [NSMutableArray array];
         
         for (int i = 0; i < [todayLineTableView numberOfRowsInSection:0]; i++) {
-            CGFloat cellHeightFloat = [self tableView:todayLineTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
-            
-            tableHeight += cellHeightFloat;
+            CGFloat cellHeight = [self tableView:todayLineTableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+            tableHeight += cellHeight;
             
             [totalWidgetHeights addObject:[NSNumber numberWithFloat:tableFrame.origin.y + tableHeight]];
         }
@@ -154,11 +153,11 @@
         [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, preferredWidgetHeight)];
         
         if (preferredWidgetHeight > self.view.frame.size.height) {
-            NSArray *totalWidgetHeightsReversed = [[totalWidgetHeights reverseObjectEnumerator] allObjects];
+            NSArray *totalWidgetHeightsReversed = totalWidgetHeights.reverseObjectEnumerator.allObjects;
             
-            for (NSNumber *cellHeightNumber in totalWidgetHeightsReversed) {
-                if ([cellHeightNumber floatValue] < self.view.frame.size.height) {
-                    [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cellHeightNumber floatValue])];
+            for (NSNumber *cellHeight in totalWidgetHeightsReversed) {
+                if ([cellHeight floatValue] < self.view.frame.size.height) {
+                    [self setPreferredContentSize:CGSizeMake(self.preferredContentSize.width, [cellHeight floatValue])];
                     
                     break;
                 }
