@@ -25,7 +25,7 @@
     if (self) {
         lineColoursDict = [[NSMutableDictionary alloc] init];
         
-        NSDictionary *lineRGBs = [[NSDictionary alloc] initWithObjectsAndKeys:@"#AE6118", @"Bakerloo", @"#E41F1F", @"Central", @"#F8D42D", @"Circle", @"#007229", @"District", @"#00BBB4", @"DLR", @"#E899A8", @"Hammersmith and City", @"#686E72", @"Jubilee", @"#893267", @"Metropolitan", @"#000000", @"Northern", @"#F86C00", @"Overground", @"#0450A1", @"Piccadilly", @"#7156A5", @"TfL Rail", @"#009FE0", @"Victoria", @"#70C3CE", @"Waterloo and City", nil];
+        NSDictionary *lineRGBs = [[NSDictionary alloc] initWithObjectsAndKeys:@"#AE6118", @"Bakerloo", @"#E41F1F", @"Central", @"#F8D42D", @"Circle", @"#007229", @"District", @"#00BBB4", @"DLR", @"#E899A8", @"Hammersmith and City", @"#686E72", @"Jubilee", @"#893267", @"Metropolitan", @"#000000", @"Northern", @"#F86C00", @"Overground", @"#0450A1", @"Piccadilly", @"#7156A5", @"TfL Rail", @"#66CC00", @"Trams", @"#009FE0", @"Victoria", @"#70C3CE", @"Waterloo and City", nil];
         
         for (id line in lineRGBs) {
             NSString *colourForLineString = [lineRGBs valueForKey:line];
