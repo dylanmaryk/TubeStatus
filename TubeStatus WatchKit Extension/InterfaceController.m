@@ -51,7 +51,13 @@
             [lineRow.lineStatusLabel setText:[self lineStatusLabelTextForRow:i]];
         }
         
-        [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated %@", [[DataModel getUserDefaults] valueForKey:@"lastUpdated"]]];
+        NSString *lastUpdated = [[DataModel getUserDefaults] valueForKey:@"lastUpdated"];
+        
+        if (lastUpdated) {
+            [lastUpdatedLabel setText:[NSString stringWithFormat:@"Last updated %@", lastUpdated]];
+        } else {
+            [lastUpdatedLabel setText:@""];
+        }
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {
