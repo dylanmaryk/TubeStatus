@@ -55,6 +55,8 @@
     } else if (refreshedData) {
         [self loadDataRefreshed:NO];
     } else {
+        [tableView setNumberOfRows:0 withRowType:@"default"];
+        
         [lastUpdatedLabel setText:@"Please select lines in the TubeStatus app on your iPhone to see their status."];
     }
     
